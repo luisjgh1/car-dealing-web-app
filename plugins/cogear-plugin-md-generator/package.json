@@ -1,0 +1,14 @@
+{
+	"name": "cogear-plugin-md-generator",
+	"description": "",
+	"version": "1.0.0",
+	"author": "",
+	"repository": "",
+	"homepage": "",
+	"license": "MIT",
+	"main": "./plugin.js",
+	"dependencies": {
+		"axios": "^0.18.0",
+		"fs": "0.0.1-security"
+	}
+}

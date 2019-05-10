@@ -1,0 +1,156 @@
+//- Desktop
+section.text-center.background-section-touch
+  h1.text-blue-our=getInTouch.title
+  .info-get-touch
+    .col
+      h2.txt-blue.yellow-underline Address
+      i.fas.fa-map-marker-alt.style-get-icon
+      span.style-get=getInTouch.address
+    .col
+      h2.txt-blue.yellow-underline Sales
+      i.fas.fa-phone-volume.style-get-icon
+      span.style-get=getInTouch.phone
+      br
+      i.fas.fa-envelope-square.style-get-icon
+      span.style-get=`${getInTouch.email.name}${getInTouch.email.domain}`
+      br
+    .col
+      h2.txt-blue.yellow-underline Services
+      i.fas.fa-phone-volume.style-get-icon
+      span.style-get=getInTouch.financePhone
+      br
+      i.fas.fa-envelope-square.style-get-icon
+      span.style-get=getInTouch.financeEmail
+      br
+    .col
+      h2.txt-blue.yellow-underline Opening Hours
+      .row
+        .col-sm-6
+          span.style-get="Mon - Fri"
+          br
+          span.style-get="Sat"
+          br
+          span.style-get="Sun"
+          br
+        .col-sm-6
+          span.style-get=getInTouch.openingWeekDays
+          br
+          span.style-get=getInTouch.openingSaturdays
+          br
+          span.style-get=getInTouch.openingWeekDays
+          br
+  .container-social
+    if social.facebookUrl
+      a.size-social(href=social.facebookUrl)
+        i.fab.fa-facebook-square
+    if social.twitterUrl
+      a.size-social(href=social.twitterUrl)
+        i.fab.fa-twitter-square
+    if social.youtubeUrl
+      a.size-social(href=social.youtubeUrl)
+        i.fab.fa-youtube
+    if social.instagramUrl
+      a.size-social(href=social.instagramUrl)
+        i.fab.fa-instagram
+    if social.linkedInUrl
+      a.size-social(href=social.linkedInUrl)
+        i.fab.fa-linkedin-in
+  p.text-center.pt-4=getInTouch.bottomText
+//- Mobile
+section.background-section-touch-mobile.py-5
+  h3.text-center.text-secondary-blue.font-weight-3.font-size-8=getInTouch.title
+  .d-flex.justify-content-center.w-100.pt-4
+    if social.facebookUrl
+      a.item-social-init.size-social-init(href=social.facebookUrl)
+        img.w-75(src=social.facebookIcon)
+    if social.twitterUrl
+      a.item-social-init.size-social-init(href=social.twitterUrl)
+        img.w-75(src=social.twitterIcon)
+    if social.youtubeUrl
+      a.item-social-init.size-social-init(href=social.youtubeUrl)
+        img.w-75(src=social.youtubeIcon)
+    if social.instagramUrl
+      a.item-social-init.size-social-init(href=social.instagramUrl)
+        img.w-75(src=social.instagramIcon)
+    if social.linkedInUrl
+      a.item-social-init.size-social-init(href=social.linkedInUrl)
+        img.w-75(src=social.linkedInIcon)
+  .info-get-touch-1.text-secondary-gray
+    .col.margin-space.pb-4
+      h4.text-secondary-gray.font-size-9.font-weight-3.yellow-underline.underline-fixed=getInTouch.salesTitle
+      .row.pb-3
+        .col-9.d-flex.align-items-center
+          .row
+            .col-1
+              img.icon-get-in-touch.pr-2(src=getInTouch.phoneIcon)
+            .col-10
+              p.text-secondary-gray.mb-0.font-size-2.word-wrap-break=getInTouch.phone
+        .col-3
+          .d-flex.justify-content-end
+            a(href=`tel:${getInTouch.phone}`)
+              button.text-white.font-weight-3.btn.dark-blue-button.pr-3
+                img.icon-get-in-touch.pr-2(src=getInTouch.phoneLightIcon)
+                | Call
+      .row
+        .col-9.d-flex.align-items-center
+          .row
+            .col-1
+              img.icon-get-in-touch.pr-2(src=getInTouch.emailIcon)
+            .col-10
+              p.text-secondary-gray.mb-0.font-size-2.word-wrap-break=getInTouch.email.name
+              p.text-secondary-gray.mb-0.font-size-2.word-wrap-break=getInTouch.email.domain
+        .col-3
+          .d-flex.justify-content-end
+            a(href=`mailto:${getInTouch.email.name}${getInTouch.email.domain}`)
+              button.text-white.font-weight-3.btn.dark-blue-button
+                img.icon-get-in-touch.pr-2(src=getInTouch.emailLightIcon)
+                | Email
+    .col.pb-4
+      h4.text-secondary-gray.font-size-9.font-weight-3.yellow-underline.underline-fixed=getInTouch.financeTitle
+      .row.pb-3
+        .col-9.d-flex.align-items-center
+          .d-flex
+            img.icon-get-in-touch.pr-2(src=getInTouch.phoneIcon)
+            p.text-secondary-gray.mb-0.font-size-2.word-wrap-break=getInTouch.financePhone
+        .col-3
+          .d-flex.justify-content-end
+            a(href=`tel:${getInTouch.financePhone}`)
+              button.text-white.font-weight-3.btn.dark-blue-button.pr-3
+                img.icon-get-in-touch.pr-2(src=getInTouch.phoneLightIcon)
+                | Call
+      .row
+        .col-9.d-flex.align-items-center
+          .row
+            .col-1
+              img.icon-get-in-touch.pr-2(src=getInTouch.emailIcon)
+            .col-10
+              p.text-secondary-gray.mb-0.font-size-2.word-wrap-break=getInTouch.financeEmail.name
+              p.text-secondary-gray.mb-0.font-size-2.word-wrap-break=getInTouch.financeEmail.domain
+        .col-3
+          .d-flex.justify-content-end
+            a(href=`mailto:${getInTouch.financeEmail.name}${getInTouch.financeEmail.domain}`)
+              button.text-white.font-weight-3.btn.dark-blue-button
+                img.icon-get-in-touch.pr-2(src=getInTouch.emailLightIcon)
+                | Email
+    .col.pb-4
+      h4.text-secondary-gray.font-size-9.font-weight-3.yellow-underline.underline-fixed=getInTouch.hoursTitle
+      .row
+        .col-4
+          span.style-get="Mon - Sat"
+        .col-6
+          span.style-get=getInTouch.openingWeekDays
+      .row
+        .col-4
+          span.style-get="Sun"
+        .col-6
+          span.style-get=getInTouch.openingSundays
+    .col.pb-4
+      h4.text-secondary-gray.font-size-9.font-weight-3.yellow-underline.underline-fixed=getInTouch.addressTitle
+      .row
+        .col-7.pb-3
+          .row
+            .col-1
+              i.fas.fa-map-marker-alt.style-get-icon
+            .col-10
+              span.style-get=getInTouch.address
+      p.style-get.mb-0=getInTouch.bottomText

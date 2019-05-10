@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-321ignition-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-321ignition	
+  template:
+    metadata:
+      labels:
+        app: web-321ignition	
+    spec:
+      containers:
+      - name: web-321ignition	
+        image: gcr.io/ignition-production/321ignition:development
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 80
+        env:
+          - name: NODE_ENV
+            value: "prod"
+

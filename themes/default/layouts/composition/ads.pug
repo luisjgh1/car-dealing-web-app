@@ -1,0 +1,74 @@
+.ad
+  .row.my-4.ad-section-desktop.mx-0
+      .col-4
+        .ad-first.h-100.d-flex.flex-column.justify-content-between.align-items-center.py-4
+          div
+            p.text-one=ads.defaultTheme.adOne.textOne
+            p.text-two=ads.defaultTheme.adOne.textTwo
+          button.style-button(type='submit')=ads.defaultTheme.adOne.buttonText
+      .col-4
+        .ad-second.h-100.d-flex.flex-column.justify-content-between.align-items-center.py-4
+          div
+            p.text-one=ads.defaultTheme.adTwo.textOne
+            p.text-two=ads.defaultTheme.adTwo.textTwo
+            span.text-three=ads.defaultTheme.adTwo.textThree
+            span.text-four.mr-1=ads.defaultTheme.adTwo.textFour
+            span.text-five=ads.defaultTheme.adTwo.textFive
+            p.text-six=ads.defaultTheme.adTwo.textSix
+          button.mb-2.style-button(type='submit')=ads.defaultTheme.adTwo.buttonText
+          p.tac.color-white=ads.defaultTheme.adTwo.textSeven
+      .col-4
+        .ad-third.h-100.d-flex.flex-column.justify-content-between.align-items-center.py-4
+          div
+            p.text-one=ads.defaultTheme.adThree.textOne
+              span.color-white -
+              span=ads.defaultTheme.adThree.textTwo
+              span.color-white -
+              span=ads.defaultTheme.adThree.textThree
+            p.text-two=ads.defaultTheme.adThree.textFour
+            p.text-three=ads.defaultTheme.adThree.textFive
+          button.style-button(type='submit')=ads.defaultTheme.adThree.buttonText
+  section.ad-section-mobile
+    #carouseladvertising.carousel.slide(data-ride='carousel')
+      ol.carousel-indicators
+        li.active(data-target='#carouseladvertising', data-slide-to='0')
+        li(data-target='#carouseladvertising', data-slide-to='1')
+        li(data-target='#carouseladvertising', data-slide-to='2')
+      .carousel-inner(role="listbox")
+        .carousel-item.active
+          img.card-img-top(src='./imag/container-card.jpg', alt='Card image cap')
+          .container-button
+            button.style-button(type='submit')=ads.defaultTheme.adOne.buttonText
+          .container-button-1.ad-first(style="background: none")
+            p.text-one=ads.defaultTheme.adOne.textOne
+            p.text-two=ads.defaultTheme.adOne.textTwo
+        .carousel-item
+          img.card-img-top(src='./imag/container-black.jpg', alt='Card image cap')
+          .container-button
+            button.style-button(type='submit')=ads.defaultTheme.adTwo.buttonText
+          .container-button-2.ad-second(style="background: none")
+            p.text-one=ads.defaultTheme.adTwo.textOne
+            p.text-two=ads.defaultTheme.adTwo.textTwo
+            span.text-three=ads.defaultTheme.adTwo.textThree
+            span.text-four.mr-1=ads.defaultTheme.adTwo.textFour
+            span.text-five=ads.defaultTheme.adTwo.textFive
+            p.text-five=ads.defaultTheme.adTwo.textSix
+        .carousel-item
+          img.card-img-top(src='./imag/container-blue.jpg', alt='Card image cap')
+          .container-button
+            button.style-button(type='submit')=ads.defaultTheme.adThree.buttonText
+          .container-button-3.ad-third
+            p.text-one=ads.defaultTheme.adThree.textOne
+              span.color-white -
+              span=ads.defaultTheme.adThree.textTwo
+              span.color-white -
+              span=ads.defaultTheme.adThree.textThree
+            p.text-two=ads.defaultTheme.adThree.textFour
+            p.text-three=ads.defaultTheme.adThree.textFive
+      a.carousel-control-prev(href='#carouseladvertising', role='button', data-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.sr-only Previous
+      a.carousel-control-next(href='#carouseladvertising', role='button', data-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.sr-only Next
+

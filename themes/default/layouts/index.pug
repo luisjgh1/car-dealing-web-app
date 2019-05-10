@@ -1,0 +1,41 @@
+doctype html
+html(charset='UTF-8')
+  head
+    title= title
+    meta(name="viewport", content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1")
+    link(href='./css/index.min.css', rel='stylesheet', crossorigin='anonymous')
+    link(href='./css/select2.min.css', rel='stylesheet', crossorigin='anonymous')
+    link(href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel="stylesheet")
+    link(href='./css/swiper.min.css' rel="stylesheet")
+    script(src='./js/jquery.min.js')
+    script(src='./js/index.min.js')
+    script(src='./js/hammer.js')
+    script(src='./js/select2.min.js')
+    script(src='./js/hammer.js')
+    script(src='https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js')
+    script(src='https://unpkg.com/axios/dist/axios.min.js')
+  body
+    include composition/header.pug
+    include composition/cars-carousel.pug
+    include composition/search-form.pug
+
+    //- include composition/ads.pug
+
+    include composition/big-boxes.pug
+
+    include composition/our-services.pug
+
+    include composition/why-us.pug
+
+    include composition/testimonies.pug
+
+    #popular-cars
+      popular-cars
+
+    include composition/get-in-touch.pug
+
+    include composition/chat-buttons.pug
+
+    //- include composition/map.pug
+
+    include composition/footer.pug

@@ -1,0 +1,108 @@
+section
+  aside.relative
+    .row.sect1.gradient-bottom-border
+      .header-item.visible-social
+        .container-social-init
+          if social.facebookUrl
+            a.item-social-init.size-social-init(href=social.facebookUrl)
+              i.fab.fa-facebook-square
+          if social.twitterUrl
+            a.item-social-init.size-social-init(href=social.twitterUrl)
+              i.fab.fa-twitter-square
+          if social.youtubeUrl
+            a.item-social-init.size-social-init(href=social.youtubeUrl)
+              i.fab.fa-youtube
+          if social.instagramUrl
+            a.item-social-init.size-social-init(href=social.instagramUrl)
+              i.fab.fa-instagram
+          if social.linkedInUrl
+            a.item-social-init.size-social-init(href=social.linkedInUrl)
+              i.fab.fa-linkedin-in
+      .header-item.visible.open.small-separator
+        p.style-font= header.schedule
+        each button, index in header.mobileButtons
+          a(href=button.url)
+            button.btn.btn-primary.color(class={ 'button-sales': index === 0, 'button-services': index === 1, 'button-direction': index === 2 })=button.text
+      .header-item.display-none.small-separator
+        i.fas.fa-phone-volume
+        span.style-font=header.phone
+      .header-item.display-none.small-separator
+        i.fas.fa-map-marker-alt
+        span.style-font=header.address
+      .header-item.display-none
+        .btn-group(role='group')
+          button#btnIdioma.button-e.cursor-pointer(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+            | LANGUAGE
+          .dropdown-menu(aria-labelledby='btnIdioma')
+            a.dropdown-item(href='#', onClick='changeLanguageEnglish()') ENGLISH
+            a.dropdown-item(href='#', onClick='changeLanguageSpanish()') SPANISH
+
+  nav.navbar.navbar-expand-lg.navbar-light.text-center.size-nav.header-color.z-index2.position-md-fixed.px-0
+    .px-3.d-flex.justify-content-between.align-items-center.w-100.d-lg-none
+      button#header-mobile-button-color.navbar-toggler.header-color(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        span.fa.fa-bars.navbar-brand.text-warning(style="margin-right: 0")
+      a.navbar-brand.d-md-none.d-sm-block(href='#')
+        img.image-menu(src=header.logoUrl, alt='Car dealership logo image')
+      if header.brandUrl !== ''
+        a.navbar-brand.mover.d-md-none.d-sm-block(href='#')
+          img.image-menu(src=header.brandUrl, alt='Car dealership brand image')
+      i.fa.fa-search.mobile-search
+
+    .container.max-w-sm-100
+      #navbarSupportedContent.collapse.navbar-collapse.justification.mt-4.mt-md-0.ml-xs-0.vh-nav-size 
+        a.navbar-brand.big-margin-separator.d-none.d-lg-block(href='/')
+          img.image-menu.display-none(src=header.logoUrl, alt='Car dealership logo image')
+        if header.brandUrl !== ''
+          a.navbar-brand.big-margin-separator.mover.d-none.d-lg-flex(href='/')
+            img.display-none.image-menu.align-self-center(src=header.brandUrl, alt='Car dealership brand image')
+        .d-flex.right
+          //- Web version
+          ul.navbar-nav.mr-auto.pr-5.margin.d-none.d-lg-flex
+            each firstLevelItem, index in header.menuItems
+              li.nav-item.active.position-relative(class={ 'dropdown-first-level-button': firstLevelItem.subItems })
+                a.nav-link(href=firstLevelItem.url, class={ 'nav-selected': firstLevelItem.selected }, title=firstLevelItem.text)=firstLevelItem.text
+                if firstLevelItem.subItems
+                  .dropdown-menu.second-level-menu.mt-0
+                    each secondLevelItem in firstLevelItem.subItems
+                      .sub-item-content(class={ 'dropdown-second-level-button': secondLevelItem.subItems })
+                        a.dropdown-item(href=secondLevelItem.url, title=secondLevelItem.text)=secondLevelItem.text
+                        if secondLevelItem.subItems
+                          .dropdown-menu.third-level-menu.mt-0
+                            each thirdLevelItem in secondLevelItem.subItems
+                              a.dropdown-item.no-after(href=thirdLevelItem.urlm title=thirdLevelItem.text)=thirdLevelItem.text
+              if index !== header.menuItems.length-1
+                li.separator
+          //- Mobile Version
+          .navbar-menu
+            ul
+              each firstLevel, firstIndex in header.menuItems
+                if firstLevel.subItems
+                  li
+                    label(for=`menu-${firstIndex}`)=firstLevel.text
+                    input.menu-checkbox(id=`menu-${firstIndex}`, type='checkbox', name=`menu-${firstIndex}`)
+                    .menu
+                      label.menu-toggle(for=`menu-${firstIndex}`)
+                        span Back
+                      ul
+                        each secondLevel, secondIndex in firstLevel.subItems
+                          if secondLevel.subItems
+                            li
+                              label(for=`menu-${firstIndex}-${secondIndex}`)=secondLevel.text
+                              input.menu-checkbox(id=`menu-${firstIndex}-${secondIndex}`, type='checkbox', name=`menu-${firstIndex}-${secondIndex}`)
+                              .menu
+                                label.menu-toggle(for=`menu-${firstIndex}-${secondIndex}`)
+                                  span Back
+                                ul
+                                  each thirdLevel in secondLevel.subItems
+                                    li
+                                      a(href=thirdLevel.url)=thirdLevel.text
+                          else
+                            li
+                              a(href=secondLevel.url)=secondLevel.text
+                else
+                  li
+                    a(href=firstLevel.url)=firstLevel.text
+          //- Search Form
+          form.form-inline.my-2.my-lg-0.relative.d-none.d-md-flex(action="#!")
+            input.display-none.form-control.mr-sm-2.input-find(type='search', placeholder=header.searchPlaceholder, aria-label='Search')
+            i.display-none.fas.fa-microphone.microphone.style-microphone.right

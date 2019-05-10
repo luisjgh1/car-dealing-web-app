@@ -1,0 +1,56 @@
+doctype html
+html(lang='en')
+  head
+    include composition/header-libraries.pug
+    title=title
+    meta(name="description" content=description)
+    include composition/accessibility-metadata.pug
+    script(src='../js/moment.js')
+  body
+    include composition/header.pug
+    .first-section
+      .d-block
+        h1.text-center.text-white=firstSection.title
+        .d-flex.justify-content-center
+          button.style-button-form-learn.yellow-button.mx-3.mt-4(type="button" data-toggle="modal" data-target="#appraisalScheduleModal")=firstSection.appraisalScheduleButton
+          button.style-button-form-learn.mx-3.mt-4(type="button" data-toggle="modal" data-target="#onlineAppraisalModal")=firstSection.onlineAppraisalButton
+    .bg-white
+      .container
+        .px-0.px-md-5.py-5
+          h2.text-secondary-blue.font-weight-bold.text-center.mb-3=content.title
+          p.text-secondary.text-center.font-size-1=content.text
+        .row.pt-3.pb-5
+          each item in content.listItems
+            .col-md-6.py-2.py-md-1
+              .row
+                .col-2
+                  .d-flex.align-items-center.h-100
+                    img.img-fluid.rounded-circle(src=item.image)
+                .col-10
+                  p.text-secondary-gray.font-weight-bold.mb-1=item.title
+                  p.text-secondary.font-size-1=item.text
+    .bright-yellow-bg.py-4
+      .container
+        .d-flex.align-items-center.justify-content-between.py-4.px-0.px-md-5
+          h3.text-dark.font-weight-bold=lowerBanner.title
+          button.style-button-form-learn=lowerBanner.buttonText
+    include composition/footer.pug
+    #prepare
+      appraisal-schedule
+      online-appraisal
+    script.
+      const phoneNumber = !{JSON.stringify(header.phone)}
+    script(src='../js/dist/prepare/main.js')
+    script(type='application/ld+json').
+      {
+          "@context": "http://schema.org",
+          "@type": "WebSite",
+          "url": "#{ url }",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "#{ url }/search",
+            "query-input": "required"
+          }
+          "description": "#{ description }",
+          "title": "#{ title }"
+      }

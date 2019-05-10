@@ -1,0 +1,26 @@
+doctype html
+html(lang='en')
+  head
+    include composition/header-libraries.pug
+    title=title
+    meta(name="description" content=description)
+    include composition/accessibility-metadata.pug
+  body
+    include composition/header.pug
+    .first-section.pre-approved-first
+      .d-block
+        h1.text-center.text-white=firstSection.title
+    #details-calculator
+    include composition/footer.pug
+    script(src='../js/dist/details-calculator/main.js')
+    script(type='application/ld+json').
+      {
+          "@context": "http://schema.org",
+          "@type": "WebSite",
+          "url": "#{ url }",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "#{ url }/search",
+            "query-input": "required"
+          }
+      }

@@ -1,0 +1,294 @@
+.gift-card-modal {
+  width: 710px;
+  border-radius: 0;
+
+  .mock {
+    width: 340px;
+    height: 270px;
+  }
+
+  .first {
+    margin-right: 20px;
+  }
+
+  .row {
+    margin-right: 0;
+    margin-left: 0;
+
+    &.gutter {
+      margin-top: 47px;
+    }
+  }
+
+  &-title {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: -0.1px;
+    color: #464646;
+    margin-top: 45px;
+  }
+
+  .paragraph {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.47;
+    letter-spacing: -0.2px;
+    color: #8f8e8e;
+    margin-top: 15px;
+    padding-right: 5px;
+    &.first {
+      margin-top: 45px;
+    }
+    &.label {
+      padding-top: 5px;
+      margin-left: 10px;
+    }
+  }
+  
+  .email-label {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.47;
+    letter-spacing: -0.2px;
+    color: #8f8e8e;
+    margin-top: 46px;
+  }
+
+  .splitter {
+    margin-bottom: 20px;
+  }
+
+  button.grad-btn {
+    width: 97px;
+    height: 44px;
+    border-radius: 2px;
+    box-shadow: 0 2px 3px 1px rgba(176, 176, 176, 0.2);
+    border: solid 1px #f9e002;
+    background-image: linear-gradient(to bottom, #f9e002, #ffc400);
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.3px;
+    color: rgba(70, 70, 70, 0.88);    
+  }
+
+  .terms-and-conditions {
+    width: 164px;
+    height: 44px;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.58;
+    letter-spacing: -0.1px;
+    color: #8f8e8e;
+    margin-right: 20px;
+    margin-top: 5px;
+
+    span {
+      font-family: Montserrat;
+      font-size: 13px;
+      font-weight: 600;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.69;
+      letter-spacing: -0.2px;
+      color: #0a3d70;
+    }
+  }
+  
+  .gray-zone {
+    background-color: #ebebeb;
+    width: 100%;
+    height: 527px;
+    padding: 0px;
+
+    img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      bottom: 0;
+    }
+
+    .header-text {
+      width: 257px;
+      font-family: Montserrat;
+      font-size: 28px;
+      font-weight: 600;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.25;
+      letter-spacing: -0.1px;
+      color: rgba(70, 70, 70, 0.88);
+      margin: 30px;
+    }
+    .header-text .text-style-1 {
+      font-size: 18px;
+    }
+  }
+
+  .closeIcon {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+
+  input.email {
+    width: 290px;
+    height: 38px;
+    border-radius: 2px;
+    border: solid 1px #e1e1e1;
+    background-color: #f8f8f8;
+    padding: 10px;
+    font-family: Montserrat;
+    font-size: 13px;
+    font-weight: normal;
+    font-style: italic;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.2px;
+    color: #8f8e8e;
+    margin-top: 8px;
+  }
+
+  .custom-checkbox {
+    width: 22px;
+    height: 22px;
+    border-radius: 2px;
+    border: solid 2px #e1e1e1;
+    margin-top: 20px;
+  }
+
+  .arrow-back {
+    transform: rotate(180deg);
+    align-self: center;
+  }
+
+  .box-container {
+    width: 300px;
+  }
+
+  .box {
+    width: 65px;
+    height: 70px;
+    border-radius: 2px;
+    border: solid 1px #e1e1e1;
+    background-color: rgba(225, 225, 225, 0.25);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    justify-content: center;
+    margin: 0 4px 0 4px;
+
+    .date-label {
+      font-size: 12px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.58;
+      letter-spacing: -0.1px;
+      text-align: center;
+      color: #8f8e8e;
+    }
+
+    .date {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.33;
+      letter-spacing: -0.1px;
+      text-align: center;
+      color: #464646;
+    }
+  }
+
+  .big-box {
+    width: 100%;
+    height: 220px;
+    border-radius: 2px;
+    border: solid 1px #e1e1e1;
+    background-color: rgba(225, 225, 225, 0.25);
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .time-labels {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .label {
+      width: 25%;
+      font-family: Montserrat;
+      font-size: 13px;
+      font-weight: 600;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #cccccc;
+      text-align: center;
+      margin-top: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    .active {
+      border-radius: 2px;
+      border: solid 1px #6db6fb;
+      background-color: rgba(176, 214, 250, 0.15);
+    }
+  }
+
+  .date-tabs {
+    margin-top: 17px;
+    margin-bottom: 42;
+    justify-content: space-around;
+    padding-right: 30px;
+    padding-left: 30px;
+    width: 100%;
+
+    .tab-label {
+      font-size: 13px;
+      font-weight: 600;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      padding-bottom: 3px;
+      cursor: pointer;
+    }
+
+    
+    .active {
+      border-bottom: 4px solid #f9e002;
+    }
+
+    .morning {
+      color: #cccccc;
+    }
+
+    .afteroon {
+      color: black;
+    }
+
+    .evening {
+      color: #0a3d70;
+    }
+  }
+}

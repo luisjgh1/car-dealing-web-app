@@ -1,0 +1,138 @@
+doctype html
+html(lang='en')
+  head
+    include composition/header-libraries.pug
+    title=title
+    meta(name="description" content=description)
+    include composition/accessibility-metadata.pug
+    script(src='../js/moment.js')
+  body
+    include composition/header.pug
+    .first-section.service-first-section
+      .d-block
+        h1.text-center.text-white=firstSection.title
+    .bg-white
+      .container.py-5
+        .row
+          .col-md-6
+            .d-block
+              h3.text-secondary-blue.font-weight-bold=bookService.title
+              p.text-secondary.font-size-1=bookService.contentText
+              #book-service
+          .col-md-6
+            img.img-fluid(src=bookService.image)
+    .background-primary-color
+      .container.py-5
+        h2.text-white.font-weight-bold.text-center.mb-4=features.title
+        .row
+          each featureItem in features.items
+            .col-6.col-md-3
+              .d-flex.justify-content-center
+                .p-4.my-4.background-gray.rounded-circle
+              p.text-white.font-italic.font-weight-bold.text-center=featureItem.text
+    .background-gradient-vertical-white-gray
+      .container.py-5
+        .row
+          .col-md-6.offset-md-3
+            h3.text-secondary-blue.font-weight-bold.text-center=services.title
+            p.text-secondary.font-size-1.text-center=services.subtitle
+        .row
+          each serviceItem in services.items
+            .col-6.col-md-4.py-2
+              .d-flex
+                .accepted-checkmark
+                span.text-secondary.font-size-1.ml-5=serviceItem
+    .background-gradient-vertical-white-gray
+      .container.pt-5.py-md-5
+        .row
+          .col-md-6.offset-md-3
+            h3.text-secondary-blue.font-weight-bold.text-center=offers.title
+            p.text-secondary.font-size-1.text-center=offers.subtitle
+        .row.m-0.p-0
+          .col.m-0.p-0.visible-sm
+            .row.m-0.p-0.minusmx-1
+              each mosaicItem, index in offers.mosaic
+                if index % 2 !== 0
+                  .col-6.m-0.p-0
+                    .service-mosaic-image
+                      img(src=mosaicItem.image)
+                .col-6.m-0.p-0
+                  .service-mosaic-text
+                    .mosaic-text-content.px-2
+                      p.font-weight-3.line-height-1=mosaicItem.content.title
+                      p.font-size-1.line-height-1.mb-0=mosaicItem.content.text
+                if index % 2 === 0
+                  .col-6.m-0.p-0
+                    .service-mosaic-image
+                      img(src=mosaicItem.image)
+          .col-md-8.offset-md-2.visible-lg
+            .row
+              each mosaicItem, index in offers.mosaic
+                .col-md-4.m-0.p-0
+                  if index % 2 !== 0
+                    .service-mosaic-image
+                      img(src=mosaicItem.image)
+                  .service-mosaic-text
+                    .mosaic-text-content.px-4
+                      span.font-weight-3=mosaicItem.content.title
+                      br
+                      br
+                      span.font-size-1=mosaicItem.content.text
+                  if index % 2 === 0
+                    .service-mosaic-image
+                      img(src=mosaicItem.image)
+    //- include composition/service-ads.pug
+    include composition/footer.pug
+    script.
+      const phoneNumber = !{JSON.stringify(header.phone)}
+    script(src='../js/dist/service-your-car/main.js')
+    script(type='application/ld+json').
+      {
+        "@context": "http://schema.org/",
+        "@type": "Service",
+        "title": "#{ title }",
+        "description": "#{ description }"
+        "serviceType": "Service Your Car",
+        "url": "#{ url }",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "#{ title }"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "USA"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Car services",
+          "itemListElement": [
+            {
+              "@type": "OfferCatalog",
+              "name": "Car Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Change oil and filter"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Alternator replacement"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Brake pads replacement"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }

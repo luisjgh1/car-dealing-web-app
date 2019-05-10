@@ -1,0 +1,42 @@
+doctype html
+html(lang='en')
+  head
+    include composition/header-libraries.pug
+    title=title
+    meta(name="description" content=description)
+    include composition/accessibility-metadata.pug
+  body
+    include composition/header.pug
+    .first-section.no-credit-first
+      .d-block
+        h1.text-center.text-white=firstSection.title
+    .container
+      p.text-center.text-secondary.font-weight-3.font-size-8.my-4=content.title
+      .row
+        .col-12.col-md-3
+          .d-flex.justify-content-center
+            img.img-fluid.position-absolute(src=content.img)
+        .col-12.col-md-9
+          p.text-secondary.font-size-5=content.firstText
+          p.text-secondary.font-size-5=content.secondText
+          p.text-secondary.font-size-5=content.thirdText
+          p.text-secondary.font-size-5=content.fourthText
+          p.text-secondary.font-size-5=content.fifthText
+          .d-flex.align-items-center.mb-4
+            button.style-button-form-learn.yellow-button.my-3 Get pre-approved
+            each item in content.linkItems
+              a.text-secondary-blue.font-weight-3.no-underline-hover.ml-4(href=item.url)=item.text
+    include composition/footer.pug
+    script(type='application/ld+json').
+      {
+          "@context": "http://schema.org",
+          "@type": "WebSite",
+          "url": "#{ url }",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "#{ url }/search",
+            "query-input": "required"
+          }
+          "description": "#{ description }",
+          "title": "#{ title }"
+      }

@@ -1,0 +1,13 @@
+//- Email alerts Modal
+#maximumCarsModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='maximumCarsModalLabel', aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header.pb-0
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+      .modal-body.pt-0.px-4
+        .w-100.d-flex.justify-content-center
+          img(src='../imag/car_1.svg', alt='maximum cars')
+        p.text-center.text-secondary.pt-4 You can compare up to 4 vehicles at a time. Simply remove one if you'd like to add a new car.
+        .d-flex.justify-content-center
+          button.style-button-form-learn.yellow-button.text-white.my-3(type='button', data-dismiss='modal', aria-label='Close') OK, got it.

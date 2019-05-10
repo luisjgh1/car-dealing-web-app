@@ -1,0 +1,27 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+service: ${_PROJECT}
+handlers:
+- url: /
+  static_files: public/_${_PROJECT}/index.html
+  upload: public/_${_PROJECT}/index.html
+
+# .min files
+- url: /(.*\.min\.(.*))
+  static_files: public/_${_PROJECT}/\1
+  upload: public/_${_PROJECT}/(.*\.min\.(.*))
+
+# all files
+- url: /(.*\.(.*))
+  static_files: public/_${_PROJECT}/\1
+  upload: public/_${_PROJECT}/(.*\.(.*))
+
+# html files
+- url: /(.*)
+  static_files: public/_${_PROJECT}/\1/index.html
+  upload: public/_${_PROJECT}/(.*)/index.html
+
+# static files
+- url: /
+  static_dir: public/_${_PROJECT}/

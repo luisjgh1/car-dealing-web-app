@@ -1,0 +1,101 @@
+doctype html
+html(lang='en')
+  head
+    include composition/header-libraries.pug
+    title=title
+    meta(name="viewport", content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1")
+    meta(name="description" content=description)
+    include composition/accessibility-metadata.pug
+    script(src='../js/moment.js')
+  body.position-relative(data-spy="scroll" data-target="#steps-scroll" data-offset="370")
+    include composition/header.pug
+    .first-section
+      .d-block
+        h1.text-center.text-white=firstSection.title
+        h3.text-center.text-white.font-weight-light=firstSection.subtitle
+        button.style-button-form-learn.yellow-button.mx-3.mt-4(type="button" data-toggle="modal" data-target="#appraisalScheduleModal")=firstSection.appraisalScheduleButton
+        button.style-button-form-learn.mx-3.mt-4(type="button" data-toggle="modal" data-target="#onlineAppraisalModal")=firstSection.onlineAppraisalButton
+    .bg-white
+      .container.py-5
+        h5.text-blue-secondary.text-center.font-weight-3.font-size-3=howWeWillDoIt.title
+        p.text-secondary.text-center=howWeWillDoIt.subtitle
+        .position-relative
+          each item, index in howWeWillDoIt.items
+            .row.py-2.position-relative(data-spy="scroll" data-target="#steps-scroll" id="steps-item-"+(index+1))
+              .col-md-5.offset-md-1.d-flex.justify-content-end.align-items-center.overflow-hidden.pr-md-5
+                if index % 2 === 0
+                  img.img-fluid.absolute-vertical-center.position-absolute.visible-lg(src=item.image)
+                else
+                  .steps-text.d-block.py-md-5.text-md-right
+                    p.font-weight-3=item.title
+                    p.text-secondary.font-size-1=item.text
+              .col-md-5.d-flex.justify-content-start.align-items-center.overflow-hidden.pl-md-5
+                if index % 2 !== 0
+                  img.img-fluid.absolute-vertical-center.position-absolute.visible-lg(src=item.image)
+                else
+                  .steps-text.d-block.py-md-5
+                    p.font-weight-3=item.title
+                    p.text-secondary.font-size-1=item.text
+          #steps-scroll.position-absolute
+            ul.nav.nav-tabs(role="tablist")
+              each item, index in howWeWillDoIt.items
+                if index !== howWeWillDoIt.items.length-1
+                  a.steps-scroll-indicator.list-group-item.cursor-none(href="#steps-item-"+(index+1) id="steps-activator-"+(index+1))
+                else
+                  a.steps-scroll-indicator.list-group-item.cursor-none.last(href="#steps-item-"+(index+1) id="steps-activator-"+(index+1))
+    .background-primary-color
+      .container.py-5
+        .row
+          .col-md-10.offset-md-1
+            .mb-5
+              h3.text-white.text-center.font-weight-3=benefits.title
+              p.text-white.font-size-1.text-center=benefits.subtitle
+            .row
+              each item in benefits.items
+                .col-md-4.text-center.text-white
+                  .row.justify-content-center.mb-4
+                    .col-md-3
+                      img.img-fluid.rounded-circle(src=item.image)
+                  p.font-weight-3.font-italic.mb-2=item.title
+                  p.font-size-1=item.text
+    .bg-white
+      .container.py-5
+        .row
+          .col-md-4.mb-3
+            h3.text-secondary-blue.font-weight-3.mb-4=whatToBring.title
+            each item in whatToBring.listItems
+              .accepted-checkmark
+              span.text-secondary.ml-5=item
+          .col-6.col-md-4.pr-0.m-md-0.p-md-0
+            img.img-fluid(src=whatToBring.imageLeft)
+          .col-6.col-md-4.pl-0.m-md-0.p-md-0
+            img.img-fluid(src=whatToBring.imageRight)
+    .background-light-blue.py-4
+      .container
+        .row.align-items-center.py-4.px-0.px-md-5
+          .col-12.col-md-6
+            h3.text-secondary-blue.font-weight-bold=lowerBanner.title
+          .col-12.col-md-6.d-flex.justify-content-between
+            button.style-button-form-learn.m-2.m-md-0(type="button" data-toggle="modal" data-target="#appraisalScheduleModal")=lowerBanner.buttonOneText
+            button.style-button-form-learn.m-2.m-md-0(type="button" data-toggle="modal" data-target="#onlineAppraisalModal")=lowerBanner.buttonTwoText
+    include composition/footer.pug
+    #sell-car
+      appraisal-schedule
+      online-appraisal
+    script.
+      const phoneNumber = !{JSON.stringify(header.phone)}
+    script(src="../js/scrollSpyClass.js")
+    script(src="../js/dist/sell-car/main.js")
+    script(type='application/ld+json').
+      {
+          "@context": "http://schema.org",
+          "@type": "WebSite",
+          "url": "#{ url }",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "#{ url }/search",
+            "query-input": "required"
+          }
+          "description": "#{ description }",
+          "title": "#{ title }"
+      }

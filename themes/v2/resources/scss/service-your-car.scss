@@ -1,0 +1,104 @@
+.service-first-section {
+  &::after {
+    background-image: url('../imag/manurio.png');
+  }
+}
+
+.accepted-checkmark {
+  position: relative;
+  &::before {
+    content: '';
+    left: 5px;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: $light-blue;
+    border-radius: 50%;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 11px;
+    height: 12px;
+    width: 6px;
+    border-color: $white;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+}
+
+.service-mosaic-text {
+  position: relative;
+  color: white;
+  padding-top: 100%;
+  background-color: $primary;
+  .mosaic-text-content {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+.service-mosaic-image {
+  position: relative;
+  padding-top: 100%;
+  overflow: hidden;
+  img {
+    position: absolute;
+    height: 101%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.service-ad {
+  &-1 {
+    background: url('../imag/bg-keys.png');
+  }
+  &-2 {
+    .text {
+      &-two {
+        margin-top: 30px;
+        color: $bright-yellow;
+        font-size: 20px;
+        &::after {
+          content: none;
+        }
+      }
+      &-three {
+        margin-top: -25px;
+        font-size: 32px;
+        font-weight: 800;
+        color: $white;
+      }
+    }
+  }
+  &-3 {
+    background: url('../imag/bg-money.png');
+    &::before {
+      content: none;
+    }
+    &::after {
+      content: none;
+    }
+    .text {
+      &-one {
+        color: $white;
+        font-weight: 900;
+        font-size: 20px;
+      }
+      &-two {
+        &::after {
+          content: none;
+        }
+        margin-top: 0px;
+        padding-top: 20px;
+        font-size: 20px;
+        color: $secondary-blue;
+      }
+    }
+  }
+}

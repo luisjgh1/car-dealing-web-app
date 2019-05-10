@@ -1,0 +1,62 @@
+.testimonies-bg {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.testimonies-bg.carousel-star-web {
+  background-image: url('../imag/testimonies-bg.png');
+}
+
+.testimonies-bg.carousel-star-mobile {
+  background-image: url('../imag/adult-affection-beach.png');
+  padding-bottom: 450px;
+  margin-bottom: 200px;
+}
+
+.testimony-stars {
+  color: $gray-secondary;
+  font-size: 20px;
+  margin: 5px;
+}
+
+.size-title{
+  font-size: 26px;
+  font-weight: 800;
+  color: $gray-secondary;
+}
+
+.testimony-text {
+  text-align: justify;
+  font-size: 14px;
+  color: $gray-secondary;
+  font-weight: 100;
+}
+
+.testimony-carousel-indicators {
+  margin-bottom: -35px;
+  li{
+    height: 11px;
+    width: 11px;
+    border-radius: 50%;
+    background-color: rgba(darken($white, 50), 0.8);
+    margin-left: 7px;
+    margin-right: 7px;
+  }
+  li.active{
+    box-shadow: 0 0 2px $gray-secondary;
+    background-color: $white;
+  }
+}
+
+#carousel-star-mobile {
+  position: absolute;
+  left: 5%;
+  width: 90%!important;
+  margin-top: 250px;
+  .container-2-carousel {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}

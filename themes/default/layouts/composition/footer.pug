@@ -1,0 +1,41 @@
+footer
+  section.text-center.footer.footer-mobile
+    .row.align-footer.m-0
+      each value, colIndex in Array(2)
+        .col
+          each menuItem, index in footer.menuItems
+            if colIndex === 0 && index < 3
+              p
+                a.color-white(href=menuItem.url)!=menuItem.text
+            if colIndex === 1 && index > 2
+              p
+                a.color-white(href=menuItem.url)!=menuItem.text
+    .container-contact
+      h2.color-white Contacts
+      i.fas.fa-phone-volume.style-icon
+      span.margin-let=footer.phone
+      br
+      i.fas.fa-envelope-square.style-icon
+      span.margin-let=footer.email
+      br
+      i.fas.fa-map-marker-alt.style-icon
+      span.margin-let=footer.address
+      input.form-control-email.radiu(type='text', placeholder='Your email address')
+      .container-social-footer
+        a.color-white(href=social.facebookUrl)
+          i.fab.fa-facebook-square.size-social-cont
+        a.color-white(href=social.twitterUrl)
+          i.fab.fa-twitter-square.size-social-cont
+        a.color-white(href=social.youtubeUrl)
+          i.fab.fa-youtube.size-social-cont
+        a.color-white(href=social.instagramUrl)
+          i.fab.fa-instagram.size-social-cont
+        a.color-white(href=social.linkedInUrl)
+          i.fab.fa-linkedin-in.size-social-cont
+
+  section.text-center
+    img.card-img-top.size-imag(src=disclaimer.logo, alt='Card image cap')
+    br
+    p.slyle-pretermination-1=disclaimer.copyright
+    p.slyle-pretermination=disclaimer.madeBy
+    br

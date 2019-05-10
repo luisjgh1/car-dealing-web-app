@@ -1,0 +1,36 @@
+section.text-center.background-section.testimonies-bg.carousel-star-web.row.mx-0
+  h4.text-blue-our=testimonies.title
+  .col-md-4.offset-md-8.py-5
+    #carousel-star.carousel.slide(data-ride='carousel')
+      ol.carousel-indicators.testimony-carousel-indicators
+        each testimony, index in testimonies.testimonies
+          li(data-target='#carousel-star', data-slide-to=index, class={ active: index === 0 })
+      .carousel-inner
+        each testimony, index in testimonies.testimonies
+          .carousel-item(class={ active: index === 0 })
+            .d-md-flex
+              .container-2-carousel
+                .testimony-stars
+                  each star in new Array(testimony.stars)
+                    i.fas.fa-star
+                p.testimony-text.text-secondary.font-weight-3.text-center.mb-0.pt-2.pb-3=`${testimony.stars} stars`
+                h5.size-title.pb-3=`\"${testimony.title}\"`
+                p.testimony-text=testimony.description
+                h5.testimony-text.text-center=` - ${testimony.author}`
+section.text-center.background-section.testimonies-bg.carousel-star-mobile
+  h4.text-secondary-gray.font-weight-3.font-size-8=testimonies.title
+  #carousel-star-mobile.carousel.slide(data-ride='carousel', data-interval="false")
+    ol.carousel-indicators.testimony-carousel-indicators
+      each testimony, index in testimonies.testimonies
+        li(data-target='#carousel-star-mobile', data-slide-to=index, class={ active: index === 0 })
+    .carousel-inner
+      each testimony, index in testimonies.testimonies
+        .carousel-item(class={ active: index === 0 })
+          .container-2-carousel
+            .testimony-stars.mb-0
+              each star in new Array(testimony.stars)
+                i.fas.fa-star.testimony-stars
+            p.testimony-text.text-secondary-gray.text-center.mb-0.pt-0=`${testimony.stars} stars`
+            h5.size-title.mb-0=`\"${testimony.title}\"`
+            p.testimony-text=testimony.description
+            h5.testimony-text.text-center=` - ${testimony.author}`

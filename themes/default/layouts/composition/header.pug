@@ -1,0 +1,56 @@
+section
+  aside
+    .row.sect1
+      .header-item.visible-social
+        .container-social-init
+          a.item-social-init.size-social-init(href=social.facebookUrl)
+            i.fab.fa-facebook-square
+          a.item-social-init.size-social-init(href=social.twitterUrl)
+            i.fab.fa-twitter-square
+          a.item-social-init.size-social-init(href=social.youtubeUrl)
+            i.fab.fa-youtube
+          a.item-social-init.size-social-init(href=social.instagramUrl)
+            i.fab.fa-instagram
+          a.item-social-init.size-social-init(href=social.linkedInUrl)
+            i.fab.fa-linkedin-in
+      .header-item.visible.open
+        p.style-font= header.schedule
+        each button, index in header.mobileButtons
+          button.btn.btn-primary.color(href=button.url, class={ 'button-sales': index === 0, 'button-services': index === 1, 'button-direction': index === 2 })=button.text
+      .header-item.display-none
+        i.fas.fa-phone-volume
+        span.style-font=header.phone
+      .header-item.display-none
+        i.fas.fa-map-marker-alt
+        span.style-font=header.address
+      .header-item.display-none
+        .btn-group(role='group')
+          button#btnIdioma.button-e.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+            | ESPANOL
+          .dropdown-menu(aria-labelledby='btnIdioma')
+            a.dropdown-item(href='#') ENGLISH
+
+  nav.navbar.navbar-expand-lg.navbar-light.text-center.size-nav.color
+    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation', style="background: transparent !important")
+      span.fa.fa-bars.navbar-brand.text-warning(href='#', style="margin-right: 0")
+    a.navbar-brand.d-md-none.d-sm-block(href='#')
+      img.image-menu(src=header.logoUrl, alt='')
+    a.navbar-brand.mover.d-md-none.d-sm-block(href='#')
+      img.image-menu(src=header.brandUrl, alt='')
+
+
+    #navbarSupportedContent.collapse.navbar-collapse.justification
+      a.navbar-brand.d-sm-none.d-md-block(href='#')
+        img.image-menu.display-none(src=header.logoUrl, alt='')
+      a.navbar-brand.mover.d-sm-none.d-md-block(href='#')
+        img.display-none.image-menu(src=header.brandUrl, alt='')
+      i.fas.fa-sesarch.visible-search
+      ul.navbar-nav.mr-auto.margin
+        each menuItem in header.menuItems
+          li.nav-item.active
+            a.nav-link(href=menuItem.url)=menuItem.text
+      //- form.form-inline.my-2.my-lg-0
+        //- search-input
+        //- input.display-none.form-control.mr-sm-2.radiu-position.input-find(type='search', placeholder=header.searchPlaceholder, aria-label='Search')
+        //- i.display-none.fas.fa-microphone.microphone.style-microphone
+        //- img.display-none.search-imag(src='./imag/icon-search.svg', alt='')

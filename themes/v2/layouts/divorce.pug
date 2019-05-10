@@ -1,0 +1,39 @@
+doctype html
+html(lang='en')
+  head
+    include composition/header-libraries.pug
+    title=title
+    meta(name="description" content=description)
+    include composition/accessibility-metadata.pug
+  body
+    include composition/header.pug
+    .first-section.no-credit-first
+      .d-block
+        h1.text-center.text-white=firstSection.title
+    .container
+      .d-flex.justify-content-center.my-4
+        img(src=content.img)
+      .row.justify-content-center
+        .col-12.col-md-10
+          p.text-center.font-weight-1.mb-3=content.title
+          p.text-center.text-secondary.font-size-5=content.firstText
+          p.text-center.text-secondary.font-size-5=content.secondText
+          p.text-center.text-secondary.font-size-5=content.thirdText
+          p.text-center.text-secondary.font-size-5=content.fourthText
+          .d-flex.justify-content-center
+            button.style-button-form-learn.yellow-button.my-3 Get pre-approved
+          .row.justify-content-center
+            .col-6.py-4
+              .row.pb-4
+                each item in content.linkItems
+                  .col-6.text-center.my-1
+                    a.text-secondary-blue.font-weight-3.no-underline-hover(href=item.url)=item.text
+    include composition/footer.pug
+    script(type='application/ld+json').
+      {
+          "@context": "http://schema.org",
+          "@type": "WebSite",
+          "description": "#{ description }",
+          "name": "#{ name }",
+          "url": "#{ url }"
+      }

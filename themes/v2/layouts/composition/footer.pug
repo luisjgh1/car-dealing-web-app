@@ -1,0 +1,93 @@
+footer
+  //- Desktop
+  .d-none.d-md-flex.text-center.text-md-left.footer-contact.text-white
+    .container
+      .row
+        .col-md-4
+          h5.yellow-underline.font-weight-3.font-size-3.text-white.text-left=footerContact.rowOne.title
+          .row
+            each element in footerContact.rowOne.elements
+              .col-md-6
+                a.font-weight-3(href=element.link)=element.name
+        .col-md-4
+          h5.yellow-underline.font-weight-3.font-size-3.text-white.text-left=footerContact.rowTwo.title
+          .row
+            .col-md-6
+              ul.list-unstyled
+                li
+                  i.fas.fa-phone-volume
+                  span.style-font.font-weight-3=footerContact.rowTwo.phone
+                li
+                  i.fas.fa-envelope
+                  span.style-font.font-weight-3=footerContact.rowTwo.email
+            .col-md-6
+              ul.list-unstyled
+                li
+                  i.fas.fa-map-marker-alt
+                  span.style-font.font-weight-3=footerContact.rowTwo.location
+        .col-md-4
+          h5.yellow-underline.font-weight-3.font-size-3.text-white.text-left=footerContact.rowThree.title
+          form.form-inline.my-2.my-lg-0.relative
+            input.form-control.mr-sm-2.w-md-100.input-find(type='search', placeholder=footerContact.rowThree.inputPlaceholder, aria-label='Search')
+          .container-social-init.d-flex.justify-content-between.pl-md-5.mt-2
+            a.item-social-init.size-social-init.d-flex.justify-content-center.align-items-center(href=social.facebookUrl)
+              i.fab.fa-facebook-square
+            a.item-social-init.size-social-init.d-flex.justify-content-center.align-items-center(href=social.twitterUrl)
+              i.fab.fa-twitter-square
+            a.item-social-init.size-social-init.d-flex.justify-content-center.align-items-center(href=social.youtubeUrl)
+              i.fab.fa-youtube
+            a.item-social-init.size-social-init.d-flex.justify-content-center.align-items-center(href=social.instagramUrl)
+              i.fab.fa-instagram
+            a.item-social-init.size-social-init.d-flex.justify-content-center.align-items-center(href=social.linkedInUrl)
+              i.fab.fa-linkedin-in
+
+  //- Mobile
+  .background-primary-color
+    .container.py-4
+      .row
+        .col-5.py-1
+          a.text-secondary-blue.font-weight-3(href='#', onClick='changeLanguageSpanish()') En Español
+        each item, index in footerContact.mobileElements
+          if(index % 2 != 0)
+            .col-5.py-1
+              a.text-secondary-blue.font-weight-3(href=item.url)=item.name
+          else
+            .col-7.py-1
+               a.text-secondary-blue.font-weight-3(href=item.url)=item.name
+
+      h5.yellow-underline.underline-fixed.font-weight-3.font-size-3.text-white.pt-4=footerContact.rowTwo.title
+      .row.pb-3
+        .col-9.d-flex.align-items-center
+          .row
+            .col-1
+              img.icon-get-in-touch.pr-2(src='/imag/phone_icon_white.svg')
+            .col-9
+              span.text-secondary-blue.font-weight-3.mb-0.font-size-2.word-wrap-break=footerContact.rowTwo.phone
+        .col-3
+          .d-flex.justify-content-end
+            a(href=`tel:${footerContact.rowTwo.phone}`)
+              button.text-white.font-weight-3.btn.dark-blue-button.pr-3
+                img.icon-get-in-touch.pr-2(src='/imag/phone-icon-light.svg')
+                | Call
+      .row
+        .col-9.d-flex.align-items-center
+          .row
+            .col-1
+              img.icon-get-in-touch.pr-2(src='/imag/location_icon_white.svg')
+            .col-9
+              p.text-secondary-blue.font-weight-3.mb-0.font-size-2.word-wrap-break=footerContact.rowTwo.location
+        .col-3
+          .d-flex.justify-content-end
+            a(href=footerContact.rowTwo.mapsUrl)
+              button.text-white.font-size-2.font-weight-3.style-button-form-learn.dark-blue-button.py-2 Directions
+
+  //- Page bottom
+  section.text-center
+    img.card-img-top.size-imag(src=disclaimer.logo, alt='Card image cap')
+    br
+    p.slyle-pretermination-1=disclaimer.copyright
+    p.slyle-pretermination=disclaimer.madeBy
+    br
+#google_translate_element(style='display:none')
+script(type='text/javascript' src='/js/googleTranslate.js')
+script(type='text/javascript' src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit')

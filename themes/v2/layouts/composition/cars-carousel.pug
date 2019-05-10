@@ -1,0 +1,44 @@
+article
+    #headerCarsCarousel.carousel.slide(data-ride='carousel')
+      ol.carousel-indicators.cars-carousel-indicators
+        each slide, index in header.slides
+          li(data-target='#headerCarsCarousel', data-slide-to=index ,class={ active: index === 0 })
+      .carousel-inner
+        each slide, index in header.slides
+          .carousel-item(class={ active: index === 0 })
+
+            //- Front slide
+            if index === 0
+              .h-100.w-100.position-absolute
+                .marquee-bg(style={'--img-url': `url(${slide.img})`})
+              .container.front-slide-container.h-lg-initial.pt-0.pt-md-4
+                .row.justify-content-between.align-items-center.pt-0.pt-md-5
+                  .col-5.col-md-5
+                    p.front-slide-left-text.d-none.d-md-block.mb-0=slide.text.leftTextOne
+                    p.front-slide-left-text.yellow-underline-sm=slide.text.leftTextTwo
+                  .col-4
+                    p.front-slide-right-text=slide.text.rightText
+                .row.justify-content-end.d-none.d-md-flex
+                  .col-4
+                    .front-slide-button-container.mt-2
+                      a(href=slide.button.url)
+                        button.style-button-form-learn=slide.button.text
+                .d-none.d-md-flex.justify-content-between.px-0.px-md-5.py-3.front-slide-list.position-relative
+                  each item, itemIndex in slide.text.listItems
+                    a.front-slide-list-item.no-underline-hover.py-2(title=item.text, href=item.url)=item.text
+                    if itemIndex !== slide.text.listItems.length-1
+                      .front-slide-separator
+
+            //- Second Slide
+            else
+              .h-100.w-100.position-absolute
+                .marquee-bg(style={'--img-url': `url(${slide.img})`})
+              .d-flex.align-items-center.h-100.pb-3
+                .container.position-relative.text-white.text-center
+                  h2.font-size-3.yellow-underline.underline-center.underline-low-margin=slide.title
+                  .row.m-0
+                    each item in slide.listItems
+                      .col-4.px-1
+                        p.checkmark-before.font-weight-3.font-size-5.pl-3=item.text
+
+include search-form.pug

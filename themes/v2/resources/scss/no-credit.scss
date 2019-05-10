@@ -1,0 +1,5 @@
+.no-credit-first {
+  &::after {
+    background-image: url('../imag/office-bg.png')!important;
+  }
+}

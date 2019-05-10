@@ -1,0 +1,78 @@
+doctype html
+html(lang='en')
+  head
+    include composition/header-libraries.pug
+    title=title
+    meta(name="description" content=description)
+    include composition/accessibility-metadata.pug
+  body
+    include composition/header.pug
+    .first-section
+      .d-block.yellow-underline
+        h1.text-center.text-white=firstSection.title
+        h3.text-center.text-white.font-weight-light=firstSection.subtitle
+    .v-white-gray-bg.pb-3
+      .container.pt-5
+        each item, index in tradesellItems
+          .row.mb-5
+            if index % 2 === 0
+              .col-md-7.d-flex.justify-content-center.align-items-center
+                .d-block.py-4.py-md-0
+                  img.img-fluid(src=item.image)
+              .col-md-5
+                h3.text-primary-color.font-weight-bold=item.title
+                p.text-secondary.font-size-1=item.text
+                ul.check-list-style
+                  each listItem in item.list
+                    li.text-secondary.font-size-1.py-1=listItem
+                button.style-button-form-learn=item.buttonText
+            if index % 2 !== 0
+              .col-md-7.d-flex.justify-content-center.align-items-center.visible-sm
+                .d-block.py-4.py-md-0
+                  img.img-fluid(src=item.image)
+              .col-md-5
+                h3.text-primary-color.font-weight-bold=item.title
+                p.text-secondary.font-size-1=item.text
+                ul.check-list-style
+                  each listItem in item.list
+                    li.text-secondary.font-size-1.py-1=listItem
+                button.style-button-form-learn=item.buttonText
+              .col-md-7.d-flex.justify-content-center.align-items-center.visible-lg
+                .d-block
+                  img.img-fluid(src=item.image)
+    .bright-yellow-bg.py-4
+      .container
+        .d-flex.align-items-center.justify-content-between.py-4.px-0.px-md-5
+          h3.text-dark.font-weight-bold=lowerBanner.title
+          button.style-button-form-learn=lowerBanner.buttonText
+    include composition/footer.pug
+    script().
+      {
+        "@context": "http://schema.org/",
+        "@type": "Service",
+        "title": "#{ title }",
+        "description": "#{ description }"
+        "serviceType": "Service Your Car",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "#{ title }"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "USA"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Services",
+          "itemListElement": [
+            {
+              "@type": "OfferCatalog",
+              "name": "#{ tradesellItems[1].title }",
+            }
+            {
+              "@type": "OfferCatalog",
+              "name": "#{ tradesellItems[1].title }",
+            }
+          ]
+        }
+      }

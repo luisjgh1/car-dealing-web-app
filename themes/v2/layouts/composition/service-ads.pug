@@ -1,0 +1,66 @@
+.ad
+  .container
+    .row.py-5.ad-section-desktop.mx-0
+        .col-4
+          .ad-first.h-100.d-flex.flex-column.justify-content-between.align-items-center.p-4.position-relative.service-ad-1
+            p.light-blue-underline.underline-center.font-weight-2.font-size-5=ads.adOne.textOne
+            p.font-weight-3.font-size-5=ads.adOne.textTwo
+            button.style-button-form-learn.light-blue-button(type='submit')=ads.adOne.buttonText
+        .col-4
+          .ad-second.h-100.d-flex.flex-column.justify-content-between.align-items-center.p-4.position-relative.service-ad-2
+            div
+              p.text-one.yellow-underline.underline-center=ads.adTwo.textOne
+              p.text-two=ads.adTwo.textTwo
+              p.text-three=ads.adTwo.textThree
+            button.mb-2.style-button-form-learn.light-blue-button(type='submit')=ads.adTwo.buttonText
+            p.tac.color-white.font-size-1=ads.adTwo.textSeven
+        .col-4
+          .ad-third.h-100.d-flex.flex-column.justify-content-between.align-items-center.p-4.position-relative.service-ad-3
+            div
+              p.text-one.yellow-underline.underline-center=ads.adThree.textOne
+              p.text-two=ads.adThree.textTwo
+            button.style-button-form-learn.yellow-button(type='submit')=ads.adThree.buttonText
+    section.ad-section-mobile
+      #carouseladvertising.carousel.slide(data-ride='carousel')
+        ol.carousel-indicators
+          li.active(data-target='#carouseladvertising', data-slide-to='0')
+          li(data-target='#carouseladvertising', data-slide-to='1')
+          li(data-target='#carouseladvertising', data-slide-to='2')
+        .carousel-inner(role="listbox")
+          .carousel-item.active
+            img.card-img-top(src='./imag/container-card.jpg', alt='Card image cap')
+            .container-button
+              button.style-button(type='submit')=ads.adOne.buttonText
+            .container-button-1.ad-first(style="background: none")
+              p.text-one=ads.adOne.textOne
+              p.text-two=ads.adOne.textTwo
+          .carousel-item
+            img.card-img-top(src='./imag/container-black.jpg', alt='Card image cap')
+            .container-button
+              button.style-button(type='submit')=ads.adTwo.buttonText
+            .container-button-2.ad-second(style="background: none")
+              p.text-one=ads.adTwo.textOne
+              p.text-two=ads.adTwo.textTwo
+              span.text-three=ads.adTwo.textThree
+              span.text-four.mr-1=ads.adTwo.textFour
+              span.text-five=ads.adTwo.textFive
+              p.text-five=ads.adTwo.textSix
+          .carousel-item
+            img.card-img-top(src='./imag/container-blue.jpg', alt='Card image cap')
+            .container-button
+              button.style-button(type='submit')=ads.adThree.buttonText
+            .container-button-3.ad-third
+              p.text-one=ads.adThree.textOne
+                span.color-white -
+                span=ads.adThree.textTwo
+                span.color-white -
+                span=ads.adThree.textThree
+              p.text-two=ads.adThree.textFour
+              p.text-three=ads.adThree.textFive
+        a.carousel-control-prev(href='#carouseladvertising', role='button', data-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.sr-only Previous
+        a.carousel-control-next(href='#carouseladvertising', role='button', data-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.sr-only Next
+

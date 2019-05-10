@@ -1,0 +1,114 @@
+#popular-cars{
+  background: $popular-cars-container-background;
+  padding-bottom: 20px;
+}
+
+#popular-car-carousel-web {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  .carousel-inner {
+    .carousel-item {
+      .row {
+        .card{
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+  .carousel-control-bg {
+    background-color: rgba($gray, 0.3);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+  .carousel-control-prev {
+    width: 5%;
+    padding: 0;
+  }
+  .carousel-control-next {
+    width: 5%;
+    padding: 0;
+  }
+}
+
+
+.popular-car-img {
+  padding: 10px 10px 0 10px;
+  &::after {
+    content: '';
+    float: left;
+    height: 130px;
+    width: 100%;
+    background-image: var(--img-url);
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
+.text-car-model {
+  position: relative;
+  font-size: 15px;
+  font-weight: 800;
+  color: $gray-secondary;
+  margin-bottom: 0;
+}
+
+.popular-car-financing {
+  padding: 1em 0;
+  background-color: rgba($primary, 0.1);
+  border-top: 2px solid $primary;
+  font-size: 12px;
+  font-weight: bold;
+  color: lighten($gray-secondary, 20);
+  margin-bottom: 5px;
+}
+
+.div-pay{
+  background: $price-container-background;
+  padding: 10px 20px;
+  box-shadow: 0px 5px $price-container-shadow;
+  font-size: 20px;
+  font-weight: 900;
+  color: $price-color;
+}
+
+.discount-img {
+  position: relative;
+  &::after {
+    content: '';
+    top: -32.5px;
+    left: -2.5px;
+    position: absolute;
+    width: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid $discount-color;
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+  span {
+    position: absolute;
+    line-height: 15px;
+    color: $gray;
+    font-weight: bolder;
+    top: 7.5px;
+    left: 12.5px;
+    transform: rotate(-45deg);
+  }
+  img {
+    padding-left: 9px!important;
+  }
+}
+
+.discount {
+  background: $discount-color;
+  box-shadow: 0px 5px darken($discount-color, 10);
+  color: rgba(0,0,0,0.7);
+  del {
+    font-weight: lighter;
+  }
+}

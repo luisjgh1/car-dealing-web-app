@@ -1,0 +1,193 @@
+#headerCarsCarousel {
+  .carousel-inner {
+    background: -webkit-gradient(linear, left bottom, right bottom, from($dark-blue), to($dark-blue), color-stop(0.5, lighten($dark-blue, 15%)));;
+    .carousel-item {
+      // position: relative;
+      height: 500px;
+      img {
+        position: absolute;
+        bottom: 0;
+      }
+      .front-slide {
+        &-container {
+          height: 65%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+        }
+        &-left-text, &-right-text {
+          top: 15%;
+          color: $white;
+          font-weight: 800;
+          position: relative;
+          font-size: 32px;
+          text-align: center;
+          line-height: 120%;
+          @media screen and (max-width:($break-medium - 1px)) {
+            font-size: 28px;
+          }
+        }
+        &-button-container {
+          display: flex;
+          justify-content: center;
+          p {
+            margin: 0;
+          }
+          button {
+            background-image: linear-gradient(lighten($primary, 25), darken($primary, 5));
+            color: $white;
+            font-weight: 900;
+            &::after {
+              border-color: rgba($secondary-blue,0.7);
+            }
+          }
+        }
+        &-list {
+          &-item {
+            font-size: 22px;
+            line-height: 24px;
+            font-weight: 800;
+            margin-bottom: 0;
+            color: $white;
+            text-align: center;
+            z-index: 1;
+            transition: font-size 0.3s ease-out;
+            &::after {
+              content: attr(title);
+              font-size: 24px;
+              display: block;
+              overflow: hidden;
+              height: 0;
+              visibility: hidden;
+              pointer-events: none;
+            }
+            &:hover {
+              font-size: 24px;
+            }
+          }
+        }
+        &-separator {
+          width: 2px;
+          background: $primary;
+        }
+      }
+      .marquee-bg {
+        &::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-position: center center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-image: var(--img-url);
+        }
+      }
+      .blue-overlay {
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-position: center center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-image: var(--img-url);
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(darken($dark-blue, 10), 0.75);
+        }
+      }
+      h2, h3 {
+        font-weight: 800;
+      }
+      h2 {
+        font-size: 52px;
+      }
+      h3 {
+        font-size: 20px;
+      }
+      .slide-shield-container {
+        display: inline-flex;
+        h2 {
+          margin-left: 0.5rem;
+          margin-right: 0.5rem;
+        }
+        .slide-shield-title {
+          position: relative;
+          width: 100px;
+          img {
+            top: -25%;
+            position: relative;
+          }
+          span {
+            font-size: 20px;
+          }
+          h2 {
+            position: absolute;
+            width: 100%;
+            font-size: 44px;
+            top: 0;
+            margin-right: 0;
+            margin-left: 0;
+          }
+        }
+      }
+      .yellow-underline {
+        &::after {
+          margin-bottom: -25px;
+          width: 10%;
+          left: 45%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:($break-medium - 1px)) {
+  #headerCarsCarousel {
+    .carousel-inner {
+      .carousel-item {
+        height: 250px;
+        h2 {
+          font-size: 36px;
+        }
+        h3 {
+          font-size: 18px;
+        }
+        .slide-shield-container {
+          .slide-shield-title {
+            width: 60px;
+            h2 {
+              font-size: 28px;
+            }
+          }
+        }
+        .front-slide {
+          &-container {
+            height: 85%;
+          }
+        }
+      }
+    }
+  }
+  .yellow-underline-sm {
+    position: relative;
+    margin-bottom: 40px;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 40%;
+      left: 50%;
+      margin-bottom: -20px;
+      border: 2px solid $bright-yellow;
+      transform: translate(-50%, 0);
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.big-boxes
+
+  section.section-much-get.big-boxes-web
+    a.section-much.pr-5.no-underline-hover(href=bigBoxes.linkOne)
+      .big-boxes-image
+        img(src=bigBoxes.imageOne, width='120', height='100', alt='Car trade in value')
+      span.style-container-yellow=bigBoxes.textOne
+    a.section-get.pr-5.no-underline-hover(href=bigBoxes.linkOne)
+      .big-boxes-image
+        img(src=bigBoxes.imageTwo, width='160', height='100', alt='Car payment pre-approved')
+      .d-block
+        p.style-container-blue=bigBoxes.textTwoPointOne
+          p.blue-container-small-text=bigBoxes.textTwoPointTwo
+
+  section.section-much-get.big-boxes-mobile
+    #carousel-blue-yellow.carousel.slide(data-ride='carousel', data-interval="false")
+      ol.carousel-indicators
+        li.active(data-target='#carousel-blue-yellow', data-slide-to='0')
+        li(data-target='#carousel-blue-yellow', data-slide-to='1')
+      .carousel-inner(role='listbox')
+        .carousel-item.active
+          a.section-much.pr-5.no-underline-hover(href=bigBoxes.linkOne)
+            .big-boxes-image
+              img(src=bigBoxes.imageOne, width='60', height='70', alt='Car trade in value')
+            span.style-container-yellow.font-weight-3=bigBoxes.textOne
+        .carousel-item
+          a.section-get.pr-5.no-underline-hover(href=bigBoxes.linkOne)
+            .big-boxes-image
+              img(src=bigBoxes.imageTwo, width='80', height='70', alt='Car payment pre-approved')
+            .d-block
+              p.text-white.style-container-blue.font-weight-3=bigBoxes.textTwoPointOne

@@ -1,0 +1,59 @@
+.custom-modal {
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 41.3px;
+  padding-bottom: 35px;
+  width: 500px;
+  height: 344px;
+
+  &-title {
+    font-size: 28px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: -0.1px;
+    text-align: center;
+    color: rgba(70, 70, 70, 0.88);
+  }
+
+  &-paragraph {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.47;
+    letter-spacing: -0.2px;
+    text-align: center;
+    color: #8f8e8e;
+  }
+
+  .mock {
+    margin-bottom: 23.8px;
+  }
+
+  button.grad-btn {
+    width: 132px;
+    height: 44px;
+    border-radius: 2px;
+    box-shadow: 0 2px 3px 1px rgba(176, 176, 176, 0.2);
+    border: solid 1px #f9e002;
+    background-image: linear-gradient(to bottom, #f9e002, #ffc400);
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.3px;
+    color: rgba(70, 70, 70, 0.88);
+    margin-top: 40px;
+  }
+}
+
+.closeIcon {
+  justify-content: 'flex-end';
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}

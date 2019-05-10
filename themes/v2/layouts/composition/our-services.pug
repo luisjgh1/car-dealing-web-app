@@ -1,0 +1,33 @@
+.background-white
+  section.container.py-4.px-3
+    .text-center.pt-4
+      h1.text-blue-our.pb-3=ourServices.title
+      p.text-secondary-gray.text-sm-left.yellow-underline.underline-center=ourServices.subTitle
+    each service, index in ourServices.services
+      //- Desktop
+      .row.our-services-row.py-3.d-none.d-md-flex
+        if (index % 2) === 1
+          .our-services-image
+            img.card-img-top(src=service.image, alt='Card image cap')
+          .our-services-item
+            .card-body
+              h5.card-title.text-secondary-gray.font-weight-3.font-size-3=service.title
+              p.card-text.text-sm-center.pr-0.pr-md-5=service.description
+              button.style-button-form-learn.dark-blue-button.w-sm-100(href='#')=service.buttonText
+        if (index % 2) === 0
+          .our-services-item
+            .card-body
+              h5.card-title.text-secondary-gray.font-weight-3.font-size-3.left-service-text.text-sm-center=service.title
+              p.card-text.left-service-text.text-sm-center.pl-0.pl-md-5=service.description
+              button.style-button-form-learn.dark-blue-button.left-service-button.w-sm-100(href='#')=service.buttonText
+          .our-services-image
+            img.card-img-top(src=service.image, alt='Card image cap')
+      //- Mobile
+      .d-md-none.py-3
+        h5.card-title.text-secondary-gray.font-weight-3.text-sm-center.font-size-8=service.title
+        .our-services-image
+          img.card-img-top(src=service.image, alt='Card image cap')
+        .our-services-item.pt-3
+          .card-body
+            p.text-secondary-gray.text-left.card-text.pr-0.pr-md-5=service.description
+            button.style-button-form-learn.dark-blue-button.w-sm-100(href='#')=service.buttonText

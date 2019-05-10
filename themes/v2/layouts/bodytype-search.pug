@@ -1,0 +1,33 @@
+doctype html
+html(lang='en')
+  head
+    include composition/header-libraries.pug
+    title=title
+    meta(name="description" content=description)
+    script(src='../js/index.min.js')
+  body
+    include composition/header.pug
+    .first-section.bodytype-search
+      .d-block
+        h1.text-center.text-white=firstSection.title
+    #bodytype
+    .bright-yellow-bg.py-4
+      .container
+        .d-flex.align-items-center.justify-content-between.py-4.px-0.px-md-5
+          h3.text-dark.font-weight-bold=lowerBanner.title
+          button.style-button-form-learn=lowerBanner.buttonText
+    include composition/footer.pug
+    script(src="../js/dist/bodytype-search/main.js")
+    script(type='application/ld+json').
+      {
+          "@context": "http://schema.org",
+          "@type": "WebSite",
+          "url": "#{ url }",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "#{ url }/search",
+            "query-input": "required"
+          }
+          "description": "#{ description }",
+          "title": "#{ title }"
+      }

@@ -1,0 +1,62 @@
+doctype html
+html(lang='en')
+  head
+    include composition/header-libraries.pug
+    script(src='./js/moment.js')
+    script(src='./js/select2.min.js')
+    script(src='./js/axios.min.js')
+    script(src='./js/dist/index/main.js')
+    title=title
+    meta(name="description" content=description)
+    include composition/accessibility-metadata.pug
+  body
+    include composition/header.pug
+    include composition/cars-carousel.pug
+
+    include composition/ads.pug
+
+    //- Desktop
+    .d-none.d-md-block
+      include composition/big-boxes.pug
+
+    include composition/latest-reviews.pug
+
+    include composition/our-services.pug
+
+    //- Mobile
+    .d-md-none
+      include composition/big-boxes.pug
+
+    include composition/why-us.pug
+
+    include composition/testimonies.pug
+
+    #popular-cars
+
+    include composition/get-in-touch.pug
+
+    //- include composition/chat-buttons.pug
+
+    include composition/map.pug
+
+    include composition/footer.pug
+
+    include composition/thanks-for-signing-up-modal.pug
+
+    include composition/finance-your-car.pug
+
+    include composition/maximum-cars-modal.pug
+
+    script(type='application/ld+json').
+      {
+        "@context": "http://schema.org",
+        "@type": "LocalBusiness",
+        "name" : "#{ title }",
+        "description": "#{ description }",
+        "image": "#{ url }/#{ header.logoUrl }",
+        "currenciesAccepted": "USD"
+        "url": "#{ url }"
+      }
+    include composition/gift-card-modal-1.pug
+
+    include composition/gift-card-modal-2.pug

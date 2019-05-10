@@ -1,0 +1,35 @@
+doctype html
+html(lang='en')
+  head
+    include composition/header-libraries.pug
+    title=title
+    meta(name="description" content=description)
+    include composition/accessibility-metadata.pug
+    script(src='../js/moment.js')
+  body
+    include composition/header.pug
+    .first-section.pre-approved-first
+      .d-block.yellow-underline
+        h1.text-center.text-white=firstSection.title
+    #pre-approved
+    include composition/footer.pug
+    include composition/maximum-cars-modal.pug
+    //- Getting .md data to VueJS
+    script.
+      const firstPageData = !{JSON.stringify(firstPage)};
+      const secondPageData = !{JSON.stringify(secondPage)};
+      const thirdPageData = !{JSON.stringify(thirdPage)};
+    script(src='../js/dist/pre-approved/main.js')
+    script(type='application/ld+json').
+      {
+          "@context": "http://schema.org",
+          "@type": "WebSite",
+          "url": "#{ url }",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "#{ url }/search",
+            "query-input": "required"
+          }
+          "description": "#{ description }",
+          "title": "#{ title }"
+      }

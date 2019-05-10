@@ -1,0 +1,26 @@
+doctype html
+html(lang='en')
+  head
+    include composition/header-libraries.pug
+    title=title
+    meta(name="description" content=description)
+    include composition/accessibility-metadata.pug
+    script(src='../js/moment.js')
+  body
+    include composition/header.pug
+    #car-details
+    include composition/footer.pug
+    include composition/maximum-cars-modal.pug
+    script.
+      const carDetails = !{JSON.stringify(carDetails)};
+    script(src="../js/dist/car-details/main.js")
+
+    script(type='application/ld+json').
+      {
+        "@context": "http://schema.org",
+        "@type": "Car",
+        "name" : "#{ carDetails.name }",
+        "description": "#{ description }",
+        "image": "#{ carDetails.imageUrl }",
+        "url": "#{ url }"
+      }

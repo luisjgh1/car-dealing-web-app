@@ -1,0 +1,23 @@
+section.text-center.background-section.carousel-star
+  h4.text-blue=testimonies.title
+  #carousel-star.carousel.slide(data-ride='carousel')
+    ol.carousel-indicators
+      li.active(data-target='#carousel-star', data-slide-to='0')
+      li(data-target='#carousel-star', data-slide-to='1')
+    .carousel-inner
+      each testimony, index in testimonies.testimonies
+        .carousel-item(class={ active: index === 0 })
+          .container-2-carousel
+            br
+            each star in new Array(testimony.stars)
+              i.fas.fa-star
+            h5.size-title=testimony.title
+            br
+            p=testimony.description
+            h5.size-fin=testimony.author
+    a.carousel-control-prev(href='#carousel-star', role='button', data-slide='prev')
+      span.carousel-control-prev-icon(aria-hidden='true')
+      span.sr-only Previous
+    a.carousel-control-next(href='#carousel-star', role='button', data-slide='next')
+      span.carousel-control-next-icon(aria-hidden='true')
+      span.sr-only Next

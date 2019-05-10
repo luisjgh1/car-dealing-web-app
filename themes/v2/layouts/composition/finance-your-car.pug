@@ -1,0 +1,26 @@
+button.btn.btn-primary(type='button' data-toggle='modal' data-target='#exampleModal2')
+ | Finance your car
+#exampleModal2.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+ .modal-dialog(role='document')
+   .modal-content.finance-modal
+      button.close.position-absolute.t-0.r-0.z-index1.mr-4.mt-3(type='button', data-dismiss='modal', aria-label='Close')
+        span(aria-hidden='true')
+          img(src=giftCardModal.closeIcon)
+      .row
+        .col.first
+          img.mock(src=financeYourCar.image)
+        .col
+          .row.justify-content-start
+            h2.finance-modal-title
+              | Save 1 hour at the dealership
+          .row.justify-content-start.finance-modal-paragraph
+            | Bad credit, no credit, excellent credit.
+          .row.justify-content-start.finance-modal-paragraph.splitter
+            | We have car financing for you.
+          .row.justify-content-start.finance-modal-paragraph
+            | Get pre-approved online and turn
+          .row.justify-content-start.finance-modal-paragraph.splitter
+            | up ready to select your new car.
+          .row.justify-content-start
+            button.grad-btn
+              | OK, got it

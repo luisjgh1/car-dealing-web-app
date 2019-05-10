@@ -1,0 +1,138 @@
+.ad {
+  &-first {
+    border-radius: 6px;
+    background: url('/imag/ad1-bg.png');
+    background-size: inherit;
+    text-align: center;
+    .text-one {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 120%;
+      color: $white;
+      &::after {
+        margin-bottom: -15px;
+      }
+    }
+    .text-two {
+      font-size: 16px;
+      font-weight: 700;
+      color: $white;
+    }
+  }
+  
+  &-second {
+    border-radius: 6px;
+    text-align: center;
+    background-image: linear-gradient(lighten($secondary-blue, 15), $secondary-blue);
+    .text-one {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 120%;
+      color: $white;
+      &::after {
+        margin-bottom: -15px;
+      }
+    }
+    .text-two {
+      font-size: 16px;
+      font-weight: 700;
+      color: $white;
+    }
+  }
+  
+  &-third {
+    border-radius: 6px;
+    text-align: center;
+    background-image: linear-gradient(lighten($bright-yellow, 25), $white);
+
+    .text-one{
+      font-size: 18px;
+      font-weight: 800;
+      color: $gray-secondary;
+    }
+    .text-two{
+      font-size: 16px;
+      font-weight: 100;
+      color: $gray-secondary;
+    }
+    .text-three{
+      position: relative;
+      font-size: 48px;
+      font-weight: 900;
+      color: $white;
+    }
+  }
+
+  &-section-mobile {
+    width: 100%;
+    padding: 20px;
+    display: block;
+    background: #dee2e6;
+
+    .container-button {
+      position: absolute;
+      bottom: 44px;
+      left: 0;
+      right: 0;
+      text-align: center
+    }
+
+    .container-button-1 {
+      position: absolute;
+      bottom: 145px;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+
+    .container-button-2 {
+      position: absolute;
+      bottom: 85px;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+
+    .container-button-3 {
+      position: absolute;
+      bottom: 85px;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+  }
+
+  &-section-desktop {
+    display: none;
+  }
+
+  @media only screen and (min-width: $break-large) {
+    &-section-mobile {
+      display: none;
+    }
+
+    &-section-desktop {
+      display: flex;
+    }
+  }
+}
+
+.ad-section-mobile {
+  padding-bottom: 40px;
+  .carousel-indicators {
+    bottom: -40px;
+    li {
+      height: 12px;
+      width: 12px;
+      border-radius: 50%;
+      margin-left: 5px;
+      margin-right: 5px;
+      &:not(.active) {
+        background-color: rgba(darken($white, 50), 0.8);
+      }
+    }
+  }
+  .carousel-inner .carousel-item {
+    height: 280px;
+  }
+}

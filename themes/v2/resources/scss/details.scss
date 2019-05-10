@@ -1,0 +1,406 @@
+$image-height: 400px;
+.car-details {
+  .image-slides-desktop {
+    height: $image-height;
+    .selected-image {
+      max-height: 100%;
+    }
+    .images-scroll {
+      #images-container {
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        height: 330px;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        .single-image {
+          padding: 0 5px;
+          cursor: pointer;
+        }
+        .single-image+.single-image {
+          padding-top: 5px;
+        }
+      }
+      .scroll-up {
+        cursor: pointer;
+        height: 25px;
+        margin: 5px;
+        background-color: $light-gray-2;
+        position: relative;
+        &:hover {
+          background-color: darken($light-gray-2, 5);
+        }
+        &::after { 
+          content: "";
+          position: absolute;
+          left: 40%;
+          top: 25%;
+          border-style: solid;
+          border-color: rgba(0,0,0,.5);
+          border-width: 0 3px 3px 0;
+          display: inline-block;
+          padding: 10px;
+          transform: rotate(-145deg) skew(-20deg,0deg);
+          -webkit-transform: rotate(-145deg) skew(-20deg,0deg);
+        }
+      }
+      .scroll-down {
+        cursor: pointer;
+        height: 25px;
+        margin: 5px;
+        background-color: $light-gray-2;
+        position: relative;
+        &:hover {
+          background-color: darken($light-gray-2, 5);
+        }
+        &::after { 
+          content: "";
+          position: absolute;
+          left: 40%;
+          bottom: 25%;
+          border-style: solid;
+          border-color: rgba(0,0,0,.5);
+          border-width: 0 3px 3px 0;
+          display: inline-block;
+          padding: 10px;
+          transform: rotate(35deg) skew(-20deg,0deg);
+          -webkit-transform: rotate(35deg) skew(-20deg,0deg);
+        }
+      }
+    }
+  }
+  .discountDetailImg {
+    position: relative;
+    &::after {
+      content: '';
+      top: -65px;
+      left: -15px;
+      position: absolute;
+      width: 0;
+      border-top: 100px solid transparent;
+      border-bottom: 100px solid transparent;
+      border-left: 100px solid $discount-color;
+      -webkit-transform: rotate(-135deg);
+      transform: rotate(-135deg);
+    }
+    span {
+      position: absolute;
+      font-size: 28px;
+      line-height: 28px;
+      color: $gray;
+      font-weight: bolder;
+      top: 10px;
+      left: 15px;
+      transform: rotate(-45deg);
+    }
+  }
+  .consumer-rating {
+    font-size: 20px;
+    span {
+      font-size: 28px;
+      font-weight: bolder;
+    }
+  }
+
+  .details-tabs .nav-tabs {
+    .nav-item {
+      flex: 1;
+      padding-top: 1.2rem;
+      padding-bottom: 1.2rem;
+      &:not(.active) {
+        background: linear-gradient(lighten($secondary-blue, 15), lighten($secondary-blue, 5));
+        &:hover {
+          border: 1px solid $secondary-blue;
+        }
+      }
+    }
+    .nav-link {
+      font-weight: 800;
+      &:not(.active) {
+        color: $white;
+      }
+    }
+  }
+
+  .good-deal-text {
+    color: $light-blue;
+    font-size: 18px;
+    span {
+      font-size: 24px;
+      color: darken($light-blue, 5);
+      font-weight: bold;
+    }
+  }
+
+  .interested-text {
+    cursor: pointer;
+    i {
+      color: $dark-blue;
+    }
+  }
+
+  .see-more-text {
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+  }
+
+  .car-payment-box {
+    background: $light-blue;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 40px;
+      bottom: 60px;
+      border: solid rgba(0,0,0,.5);
+      border-width: 0 5px 5px 0;
+      display: inline-block;
+      padding: 20px;
+      transform: rotate(-55deg) skew(-20deg,0deg);
+      -webkit-transform: rotate(-55deg) skew(-20deg,0deg);
+    }
+    .payment-img {
+      transform: rotate(-15deg);
+      width: 40%;
+      &::after {
+        content: "";
+        cursor: pointer;
+        transform: rotate(15deg);
+        position: absolute;
+        border-color: #fef504;
+        bottom: 0;
+        left: 25%;
+        width: 50%;
+        border-width: 2px;
+        border-style: solid;
+      }
+    }
+  }
+  .image-slides-mobile, #relatedCarsMobile {
+    display: none!important;
+  }
+  @media screen and (max-width:($break-medium - 1px)) {
+    .image-slides-desktop, .related-desktop {
+      display: none!important;
+    }
+    .details-indicators {
+      li{
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        border: 1px solid lighten($gray, 40);
+      }
+      li.active{
+        background-color: $dark-blue;
+      }
+    }
+    .image-slides-mobile {
+      display: block!important;
+      .carousel-item img {
+        padding: 5px;
+      }
+    }
+    .text-blue {
+      font-size: 18px;
+    }
+    .card {
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+    }
+    .details-tabs {
+      .nav-tabs .nav-item {
+        padding-left: .7rem;
+        padding-right: .7rem;
+      }
+      .tab-content {
+        
+      }
+    }
+    .see-more-text {
+      margin-bottom: -15px;
+    }
+    #relatedCarsMobile {
+      display: block!important;
+    }
+  }
+}
+
+.car-offer {
+  &-container {
+    background: linear-gradient($bright-yellow, darken($warm-yellow, 5));
+    margin-left: -2.5px;
+    margin-right: -2.5px;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      top: 100%;
+      left: 0;
+      background-color: rgba($gray-secondary,.05);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      top: 100%;
+      left: 0;
+      background-color: rgba($gray-secondary,.025);
+    }
+    transform: skewY(-1.5deg);
+  }
+  &-inner {
+    transform: skewY(1.5deg);
+  }
+  &-title {
+    font-weight: 800;
+    color: $gray-secondary;
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 20px;
+  }
+  &-date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      padding-top: 0;
+      padding-right: 0.5rem;
+    }
+    p {
+      color: $white;
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 0;
+    }
+  }
+}
+
+#test-drive-dates {
+  display: flex;
+  overflow: hidden;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.test-drive {
+  &-container {
+    display: flex;
+    position: relative;
+  }
+  &-weekDay {
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  &-monthDay {
+    color: $dark-gray;
+    font-weight: 800;
+    font-size: 18px;
+  }
+  &-month {
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  &-selected-date {
+    border: 2px solid rgba($primary, 0.5);
+    background-color: rgba($primary, 0.1);
+    min-width: 70px;
+    cursor: pointer;
+    outline: none;
+    transition: border 0.3s ease-out, background-color 0.3s ease-out;
+    &:hover {
+      border: 2px solid rgba($primary, 0.9);
+      background-color: rgba($primary, 0.3);
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  &-unselected-date {
+    border: 2px solid $light-gray;
+    background-color: rgba($light-gray, 0.2);
+    min-width: 70px;
+    cursor: pointer;
+    outline: none;
+    transition: border 0.3s ease-out, background-color 0.3s ease-out;
+    &:hover {
+      border: 2px solid darken($light-gray, 10);
+      background-color: rgba($light-gray, 0.6);
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  &-prev-arrow, &-next-arrow {
+    position: absolute;
+    height: 100%;
+    width: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    &:hover {
+      &::after {
+        border-color: rgba($black,.8);
+      }
+    }
+    &:focus {
+      outline: none;
+    }
+    &::after { 
+      content: "";
+      position: absolute;
+      top: 50%;
+      border-style: solid;
+      border-color: rgba($black,.5);
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 10px;
+      transition: border-color 0.3s ease-out;
+    }
+  }
+  &-prev-arrow {
+    left: 0;
+    &::after {     
+      left: 12.5px;
+      transform: rotate(125deg) skew(-20deg,0deg) translate(0, 50%);
+    }
+  }
+  &-next-arrow {
+    right: 0;
+    &::after { 
+      right: -2.5px;
+      transform: rotate(-55deg) skew(-20deg,0deg) translate(0, -50%);
+    }
+  }
+}
+
+// Details Calculator
+
+.discount-details-img {
+  position: relative;
+  &::after {
+    content: '';
+    top: -27.5px;
+    left: -1.5px;
+    position: absolute;
+    width: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid $discount-color;
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+  span {
+    position: absolute;
+    line-height: 15px;
+    color: $gray;
+    font-weight: bolder;
+    top: 12.5px;
+    left: 15.5px;
+    transform: rotate(-45deg);
+  }
+}

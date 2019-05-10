@@ -1,0 +1,52 @@
+button.btn.btn-primary(type='button' data-toggle='modal' data-target='#giftCardModal2')
+  | Gift Card Modal Step 2
+#giftCardModal2.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content.gift-card-modal
+      .modal-body
+        button.close.position-absolute.t-0.r-0.z-index1.mr-4.mt-3(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true')
+            img(src=giftCardModal.closeIcon)
+        .row
+          .col.gray-zone
+            .header-text Get a $25 Visa® gift card just for test driving any of our cars
+              | 
+            img(src=giftCardModal.giftCardImg)
+          .col
+            .paragraph
+              | Select test drive date
+            .row
+              img.arrow-back(src=modals.arrow)
+              .box
+                .span.date-label
+                  | MON
+                .span.date
+                  | 26
+                .span.date-label
+                  | FEB
+              .box
+                .span.date-label
+                  | TUE
+                .span.date
+                  | 27
+                .span.date-label
+                  | FEB
+              .box
+                .span.date-label
+                  | WED
+                .span.date
+                  | 28
+                .span.date-label
+                  | FEB
+              img.arrow-(src=modals.arrow)
+            .paragraph
+              | Select available test drive time
+            .big-box
+              .row.date-tabs
+                .tab-label
+                  | Morning
+                .tab-label
+                  | Afternoon
+                .tab-label
+                  | Evening
+

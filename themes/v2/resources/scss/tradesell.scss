@@ -1,0 +1,35 @@
+.check-list-style {
+  list-style-type: none;
+  li {
+    position: relative;
+    &::before {
+      content: '';
+      left: -40px;
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background-color: $light-blue;
+      border-radius: 50%;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: -34px;
+      height: 12px;
+      width: 6px;
+      border-color: $white;
+      border-style: solid;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.v-white-gray-bg {
+  background-image: linear-gradient($white, $light-gray-2);
+}
+
+.bright-yellow-bg {
+  background-color: $bright-yellow;
+}

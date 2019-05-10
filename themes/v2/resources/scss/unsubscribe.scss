@@ -1,0 +1,11 @@
+.unsubscribe-page.first-section {
+  &::after {
+    background-image: url('../imag/freeway-bg.png');
+  }
+}
+.center-horizontal-after {
+  &::after {
+    left: 50%!important;
+    transform: translate(-50%, 0);
+  }
+}

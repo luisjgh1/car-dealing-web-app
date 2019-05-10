@@ -1,0 +1,68 @@
+.pre-approved-first {
+  &::after {
+    background-image: url('../imag/carro.jpg');
+  }
+}
+
+.styled-radio-checkbox-container {
+  position: relative;
+  padding: 12px;
+  border-radius: 50%;
+  .styled-radio-checkbox-content {
+    position: absolute;
+    padding: 8px;
+    left: 4px;
+    top: 4px;
+    border-radius: 50%;
+  }
+}
+
+.img-cover {
+  object-fit: cover;
+}
+
+.faq-card {
+  .faq-card-header {
+    position: relative;
+    transition: 0.3s ease-in-out;
+    padding: 1rem;
+    border-bottom: 3px solid $light-gray;
+    h5 {
+      font-weight: 700;
+      color: lighten($gray, 10);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      transition: 0.3s ease-in-out;
+      right: 15px;
+      height: 15px;
+      width: 15px;
+      border-width: 0px 5px 5px 0px;
+      border-color: lighten($gray, 10);
+      border-style: solid;
+      top: 50%;
+      transform: rotate(35deg) skew(-20deg, 0deg) translate(0, -50%);
+    }
+    &:not(.collapsed) {
+      border-bottom: none;
+      h5 {
+        color: $primary;
+      }
+      &::after {
+        right: 0px;
+        transform: rotate(215deg) skew(-20deg, 0deg) translate(0, -50%);
+        border-color: $primary;
+      }
+    }
+  }
+  .faq-card-content {
+    transition: 0.3s ease-in-out;
+    &.show {
+      border-bottom: 3px solid rgba($primary, 0.8);
+    }
+    &:not(.show) {
+      border-bottom: none;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "321ignite",
+  "version": "1.0.0",
+  "description": "- nvm use 9.10.1 - npm install cogear -g - https://cogearjs.org/docs/plugins",
+  "main": "index.js",
+  "scripts": {
+    "generate:md": "node ./plugins/cogear-plugin-md-generator/script",
+    "build": "sh scripts/build.sh",
+    "generate_yaml": "sh scripts/generate_deploy.sh",
+    "webpack": "webpack --config webpack.config.js",
+    "webpack_prod" : "webpack --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thesoftdevteam/321ignite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thesoftdevteam/321ignite/issues"
+  },
+  "homepage": "https://github.com/thesoftdevteam/321ignite#readme",
+  "devDependencies": {
+    "cogear": "^1.3.3",
+    "terser": "^3.17.0",
+    "vue-slider-component": "^2.8.6",
+    "vuejs-datepicker": "^1.5.4"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}

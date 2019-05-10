@@ -1,0 +1,31 @@
+doctype html
+html(lang='en')
+  head
+    include composition/header-libraries.pug
+    title=title
+    meta(name="description" content=description)
+    include composition/accessibility-metadata.pug
+  body
+    include composition/header.pug
+    .first-section
+      .d-block
+        h1.text-center.text-white=firstSection.title
+    .background-gray
+      .container.py-5
+        .row.justify-content-center
+          .col-md-5
+            .d-flex.justify-content-center
+              i.fas.fa-parachute-box.fa-7x
+            p.font-weight-3.text-center.py-4=content.title
+            p.text-secondary.text-center=content.subTitle
+            .d-flex.justify-content-around.py-5
+              a.style-button-form-learn.yellow-button.no-underline-hover(href=content.goBackButton.url)=content.goBackButton.text
+              a.style-button-form-learn.no-underline-hover(href=content.goHomeButton.url)=content.goHomeButton.text
+            .row
+              each page in content.otherPagesList
+                .col-6.py-2
+                  a.font-weight-3.text-secondary-blue.no-underline-hover(href=page.url)=page.text
+      //- amp-iframe(width="200", height="100", sandbox="allow-scripts allow-same-origin", layout="responsive", frameborder="0", src="../js/jquery.min.js")
+      //- amp-iframe(width='200', height='100', sandbox='allow-scripts allow-same-origin', layout='responsive', frameborder='0', src='http://localhost:9000/js/accessibility.js')
+
+    include composition/footer.pug

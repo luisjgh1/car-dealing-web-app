@@ -1,0 +1,29 @@
+doctype html
+html(lang='en')
+  head
+    include composition/header-libraries.pug
+    script(src='../js/moment.js')
+    title=title
+    meta(name="description" content=description)
+    include composition/accessibility-metadata.pug
+  body
+    include composition/header.pug
+    .background-gray
+      #app
+    include composition/maximum-cars-modal.pug
+    script(src="../js/ResizeSensor.js")
+    script(src="../js/sticky-sidebar.min.js")
+    script(src="../js/back-to-top.js")
+    script(type='application/ld+json').
+      {
+          "@context": "http://schema.org",
+          "@type": "WebSite",
+          "url": "#{ url }",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "#{ url }/search",
+            "query-input": "required"
+          }
+          "description": "#{ description }",
+          "title": "#{ title }"
+      }

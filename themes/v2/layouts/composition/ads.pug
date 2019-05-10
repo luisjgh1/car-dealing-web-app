@@ -1,0 +1,65 @@
+.ad
+  .container.px-0
+    .row.py-5.ad-section-desktop.mx-0
+        .col-4
+          .ad-first.h-100.d-flex.flex-column.justify-content-between.align-items-center.py-4.px-5.position-relative
+            .w-100
+              p.text-one.yellow-underline.underline-center.mb-4=ads.v2Theme.adOne.textOne
+              p.text-two=ads.v2Theme.adOne.textTwo
+            button.style-button-form-learn.text-secondary-blue(type='submit')=ads.v2Theme.adOne.button.text
+        .col-4
+          .ad-second.h-100.d-flex.flex-column.justify-content-between.align-items-center.py-4.px-5.position-relative
+            .w-100
+              p.text-one.yellow-underline.underline-center.mb-4=ads.v2Theme.adTwo.textOne
+              p.text-two=ads.v2Theme.adTwo.textTwo
+            button.mb-2.style-button-form-learn.text-secondary-blue(type='submit')=ads.v2Theme.adTwo.button.text
+        .col-4
+          .ad-third.h-100.d-flex.flex-column.justify-content-between.align-items-center.p-4.position-relative
+            .w-100
+              p.text-one.mb-1=ads.v2Theme.adThree.textOne
+              p.text-two=ads.v2Theme.adThree.textTwo
+              .row.justify-content-center
+                .col-5
+                  img.img-fluid(src=ads.v2Theme.adThree.logoName, alt='coins referral')
+                .col-6.text-gray-secondary
+                  each star in new Array(parseInt(ads.v2Theme.adThree.stars))
+                    i.fas.fa-star.px-1
+                  if stars % 1 !== 0
+                    i.fa.fa-star-half-o.px-1
+                  p=`${ads.v2Theme.adThree.stars} stars`
+            button.style-button-form-learn.text-secondary-blue(type='submit')=ads.v2Theme.adThree.button.text
+    section.ad-section-mobile
+      #carouseladvertising.carousel.slide(data-ride='carousel', data-interval='false')
+        ol.carousel-indicators
+          li.active(data-target='#carouseladvertising', data-slide-to='0')
+          li(data-target='#carouseladvertising', data-slide-to='1')
+          li(data-target='#carouseladvertising', data-slide-to='2')
+        .carousel-inner(role="listbox")
+          .carousel-item.active
+            .ad-first.h-100.d-flex.flex-column.justify-content-between.align-items-center.py-4.px-5.position-relative
+              .w-100
+                p.text-one.yellow-underline.underline-center.mb-4=ads.v2Theme.adOne.textOne
+                p.text-two=ads.v2Theme.adOne.textTwo
+              button.style-button-form-learn.text-secondary-blue(type='submit')=ads.v2Theme.adOne.button.text
+          .carousel-item
+            .ad-second.h-100.d-flex.flex-column.justify-content-between.align-items-center.py-4.px-5.position-relative
+              .w-100
+                p.text-one.yellow-underline.underline-center.mb-4=ads.v2Theme.adTwo.textOne
+                p.text-two=ads.v2Theme.adTwo.textTwo
+              button.style-button-form-learn.text-secondary-blue(type='submit')=ads.v2Theme.adTwo.button.text
+          .carousel-item
+            .ad-third.h-100.d-flex.flex-column.justify-content-between.align-items-center.p-4.position-relative
+              .w-100
+                p.text-one.mb-1=`"${ads.v2Theme.adThree.textOne}"`
+                p.text-two=ads.v2Theme.adThree.textTwo
+                .row.justify-content-center
+                  .col-5
+                    img.img-fluid(src=ads.v2Theme.adThree.logoName, alt='coins referral')
+                  .col-6.text-gray-secondary
+                    each star in new Array(parseInt(ads.v2Theme.adThree.stars))
+                      i.fas.fa-star.px-1
+                    if stars % 1 !== 0
+                      i.fa.fa-star-half-o.px-1
+                    p=`${ads.v2Theme.adThree.stars} stars`
+              button.style-button-form-learn.text-secondary-blue(type='submit')=ads.v2Theme.adThree.button.text
+

@@ -1,0 +1,39 @@
+.calculatorTab {
+  .nav-item {
+    width: 50%;
+    background-color: $primary;
+    color: $white;
+    font-weight: 800;
+    &.active {
+      background-color: $white;
+      color: $gray-secondary;
+    }
+  }
+}
+
+.calculatorTabContent {
+  border-style: solid;
+  border-color: $light-gray-4;
+  border-width: 0px 1px 1px 1px;
+}
+
+.full-yellow-underline {
+  position: relative;
+  margin-bottom: 40px;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    left: 5%;
+    margin-bottom: -15px;
+    border: 2px solid $bright-yellow;
+  }
+}
+
+.black-book {
+  position: absolute;
+  right: 0;
+  font-weight: 800;
+  font-size: 12px;
+}

@@ -1,0 +1,26 @@
+section.height-section.web-section
+  .container
+    .text-center.top
+      h2.props-text=whyUs.title
+      .row.color-white
+        each reason in whyUs.reasons
+          .col-sm-6.col-lg-3.d-flex.justify-content-center
+            .reason-circle
+              .d-block
+                if reason.header
+                  p.reason-text.mb-0=reason.header
+                h3.reason-title=reason.title
+                p.reason-text=reason.description
+section.height-section.mobile-section
+  .text-center.top.py-4
+    h4.text-secondary-blue.font-weight-3.font-size-8=whyUs.title
+    .row.color-white.m-0
+      each reason in whyUs.reasons
+        .col-6.d-flex.justify-content-center.p-3
+          .reason-circle
+            .position-absolute.h-100.w-100.absolute-vertical-center.d-flex.align-items-center.justify-content-center.px-3
+              .d-block
+                if reason.header
+                  p.reason-text.mb-0=reason.header
+                h3.reason-title=reason.title
+                p.reason-text=reason.description

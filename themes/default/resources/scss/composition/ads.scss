@@ -1,0 +1,146 @@
+.ad {
+  &-first {
+    border-radius: 6px;
+    background: url('../imag/container-card.jpg');
+    background-size: cover;
+    text-align: center;
+    .text-one {
+      font-family: 'Open Sans';
+      font-size: 20px;
+      font-weight: 800;
+      color: #0c4b8a;
+    }
+    .text-two {
+      font-family: 'Open Sans';
+      font-size: 16px;
+      font-weight: 600;
+      color: #0c4b8a;
+    }
+  }
+  
+  &-second {
+    border-radius: 6px;
+    text-align: center;
+    background: url('../imag/container-black.jpg');
+    background-size: cover;
+    .text-one {
+      margin-bottom: 3px;
+      font-family: 'Open Sans';
+      font-size: 20px;
+      font-weight: 800;
+      color: #FFF;
+    }
+
+    .text-two {
+      font-family: 'Open Sans';
+      font-size: 16px;
+      font-weight: 600;
+      color: #0c4b8a;
+      margin-bottom: -10px;
+    }
+
+    .text-three {
+      font-family: 'Open Sans';
+      font-size: 30px;
+      font-weight: 600;
+      color: #f9e002;
+    }
+
+    .text-four {
+      font-family: 'Open Sans';
+      font-size: 21px;
+      font-weight: 800;
+      color: #f9e002;
+    }
+
+    .text-five {
+      font-family: 'Open Sans';
+      font-size: 21px;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+
+    .text-six {
+      color: #FFFFFF;
+    }
+  }
+  
+  &-third {
+    border-radius: 6px;
+    text-align: center;
+    background: url('../imag/container-blue.jpg');
+    background-size: cover;
+    .text-one{
+      font-family: 'Open Sans';
+      font-size: 20px;
+      font-weight: 800;
+      color: #f9e002;
+    }
+    .text-two{
+      margin-top: -20px;
+      font-family: 'Open Sans';
+      font-size: 16px;
+      font-weight: 600;
+      color: #f9e002;
+    }
+    .text-three{
+      font-family: 'Open Sans';
+      font-size: 48px;
+      font-weight: 600;
+      color: #fbfbf9;
+    }
+  }
+
+  &-section-mobile {
+    width: 100%;
+    padding: 20px;
+    display: block;
+    background: #dee2e6;
+
+    .container-button {
+      position: absolute;
+      bottom: 44px;
+      left: 0;
+      right: 0;
+      text-align: center
+    }
+
+    .container-button-1 {
+      position: absolute;
+      bottom: 145px;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+
+    .container-button-2 {
+      position: absolute;
+      bottom: 85px;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+
+    .container-button-3 {
+      position: absolute;
+      bottom: 85px;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+  }
+
+  &-section-desktop {
+    display: none;
+  }
+
+  @media only screen and (min-width: $break-large) {
+    &-section-mobile {
+      display: none;
+    }
+
+    &-section-desktop {
+      display: flex;
+    }
+  }
+}

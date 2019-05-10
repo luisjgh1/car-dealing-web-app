@@ -1,0 +1,45 @@
+.background-gray {
+  background-color: #EBEBED !important;
+}
+
+.filters-container {
+  background-color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+ul.unstyled {
+  list-style: none;
+  padding-left: 8px;
+}
+
+ul.fixed-height {
+  max-height: 140px;
+  overflow-y: scroll;
+}
+
+.top-divider {
+  border-top: 2px solid #e3e3e3;
+  padding-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.carousel-inner {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.card{
+    margin: 0 10px;
+  }
+.card img {
+  padding: 5px 5px 0 5px;
+}
+.carousel-control-prev {
+  padding-right: 50px;
+}
+.carousel-control-next {
+  padding-left: 50px;
+}
+h5 {
+  color: #0c3e70
+}

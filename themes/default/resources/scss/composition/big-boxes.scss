@@ -1,0 +1,18 @@
+.big-boxes {
+  .big-boxes-mobile{
+    display: block;
+  }
+  .big-boxes-web{
+    display: none;
+  }
+  
+  @media only screen and (min-width: $break-large) {
+    .big-boxes-mobile{
+      display: none;
+    }
+
+    .big-boxes-web{
+      display: flex;
+    }
+  }
+}

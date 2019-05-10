@@ -1,0 +1,17 @@
+section.container-fluid.background-card
+  .text-center
+    h1.text-blue-our=ourServices.title
+    p.font-style=ourServices.subTitle
+  each service, index in ourServices.services
+    .row.our-services-row
+      if (index % 2) === 1
+        .our-services-image
+          img.card-img-top(src=service.image, alt='Card image cap')
+      .our-services-item
+        .card-body
+          h5.card-title.text-blue-tree=service.title
+          p.card-text=service.description
+          button.style-button-form-learn(href='#')=service.buttonText
+      if (index % 2) === 0
+        .our-services-image
+          img.card-img-top(src=service.image, alt='Card image cap')

@@ -1,0 +1,93 @@
+section.text-center.background-section-touch
+  h1.text-blue-our=getInTouch.title
+  .info-get-touch
+    .col
+      h2.txt-blue Address
+      i.fas.fa-map-marker-alt.style-get-icon
+      span.style-get=getInTouch.address
+    .col
+      h2.txt-blue Sales
+      i.fas.fa-phone-volume.style-get-icon
+      span.style-get=getInTouch.phone
+      br
+      i.fas.fa-envelope-square.style-get-icon
+      span.style-get=getInTouch.email
+      br
+    .col
+      h2.txt-blue Services
+      i.fas.fa-phone-volume.style-get-icon
+      span.style-get=getInTouch.servicesPhone
+      br
+      i.fas.fa-envelope-square.style-get-icon
+      span.style-get=getInTouch.servicesEmail
+      br
+    .col
+      h2.txt-blue Opening Hours
+      span.style-get="Mon - Fri " + getInTouch.openingWeekDays
+      br
+      span.style-get="Sat " + getInTouch.openingSaturdays
+      br
+      span.style-get="Sun " + getInTouch.openingWeekDays
+      br
+  .container-social
+    a.size-social(href=social.facebookUrl)
+      i.fab.fa-facebook-square
+    a.size-social(href=social.twitterUrl)
+      i.fab.fa-twitter-square
+    a.size-social(href=social.youtubeUrl)
+      i.fab.fa-youtube
+    a.size-social(href=social.instagramUrl)
+      i.fab.fa-instagram
+    a.size-social(href=social.linkedInUrl)
+      i.fab.fa-linkedin-in
+  button.props-button(href='#', role='button') START CHAT
+section.background-section-touch-mobile
+  h1.text-blue-our-paddin.text-center=getInTouch.title
+  .info-get-touch-1
+    .col.margin-space
+      h2.txt-blue.space Sales
+      button.btn.btn-primary.color.sales-call(href='#') CALL
+      button.btn.btn-primary.color.sales-email(href='#') EMAIL
+      i.fas.fa-phone-volume.style-get-icon
+      span=getInTouch.phone
+      br
+      i.fas.fa-envelope-square.style-get-icon
+      span=getInTouch.email
+      br
+    .col
+      br
+      h2.txt-blue.space Services
+      button.btn.btn-primary.color.sales-call(href='#') CALL
+      button.btn.btn-primary.color.sales-email(href='#') EMAIL
+      i.fas.fa-phone-volume.style-get-icon
+      span.style-get=getInTouch.servicesPhone
+      br
+      i.fas.fa-envelope-square.style-get-icon
+      span.style-get=getInTouch.servicesEmail
+      br
+    .col
+      br
+      h2.txt-blue.space Opening Hours
+      span.style-get="Mon - Fri " + getInTouch.openingWeekDays
+      br
+      span.style-get="Sat " + getInTouch.openingSaturdays
+      br
+      span.style-get="Sun " + getInTouch.openingWeekDays
+      br
+    .col
+      br
+      h2.txt-blue.space Address
+      i.fas.fa-map-marker-alt.style-get-icon
+      span.style-get=getInTouch.address
+  .container-social
+    a.size-social(href=social.facebookUrl)
+      i.fab.fa-facebook-square
+    a.size-social(href=social.twitterUrl)
+      i.fab.fa-twitter-square
+    a.size-social(href=social.youtubeUrl)
+      i.fab.fa-youtube
+    a.size-social(href=social.instagramUrl)
+      i.fab.fa-instagram
+    a.size-social(href=social.linkedInUrl)
+      i.fab.fa-linkedin-in
+  button.props-button(href='#', role='button') START CHAT
